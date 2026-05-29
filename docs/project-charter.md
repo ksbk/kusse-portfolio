@@ -1,4 +1,4 @@
-# drkusse.com Product Brief
+# drkusse.com Project Charter
 
 ## Purpose
 
@@ -43,3 +43,12 @@ drkusse.com connects scientific research, software development, web engineering,
 - Complex CMS
 - Real client-sensitive content
 - Overly personal life-story content
+
+## Success Criteria
+
+- The site clearly presents Kusse Sukuta Bersha as a researcher-developer.
+- The site highlights selected software, research, and technical portfolio work.
+- The site is responsive on mobile, tablet, and desktop widths.
+- The public repository demonstrates professional process through docs, issues, milestones, commits, and screenshots.
+- No secrets, private client data, or sensitive personal content are committed.
+- The site is ready to share with employers, collaborators, and clients.

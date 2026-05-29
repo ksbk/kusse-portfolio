@@ -16,15 +16,6 @@ drkusse.com is a server-rendered professional portfolio website built with Djang
 - JavaScript
 - Mobile-first responsive layout
 
-## Main Content Areas
-
-- Pages
-- Projects
-- Research
-- Technical portfolio
-- CV
-- Contact
-
 ## Security
 
 - SECRET_KEY loaded from environment
@@ -34,6 +25,6 @@ drkusse.com is a server-rendered professional portfolio website built with Djang
 - No private client data committed
 - No real secrets committed
 
-## Public Evidence
+## Deployment
 
-The repository includes documentation, issues, milestones, commits, screenshots, and release notes to make the development process auditable.
+The initial deployment target is still to be decided. The project should remain deployable to a standard Python/Django-friendly platform using environment variables for configuration.

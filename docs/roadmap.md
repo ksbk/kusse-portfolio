@@ -2,11 +2,11 @@
 
 ## Sprint 0 — Foundation
 
-- DK-0001 Define product brief
-- DK-0002 Define requirements
-- DK-0003 Define architecture
-- DK-0004 Define public repository decision
-- DK-0005 Add safe repository hygiene files
+- [x] DK-0001 Define product brief / project charter
+- [x] DK-0002 Define requirements
+- [x] DK-0003 Define architecture
+- [x] DK-0004 Define public repository decision
+- [x] DK-0005 Add safe repository hygiene files
 
 ## Sprint 1 — Content Architecture
 
