@@ -1,7 +1,9 @@
 """Placeholder views for the initial Django scaffold."""
 
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def placeholder(request):
-    return HttpResponse("drkusse.com Django scaffold")
+class HomeView(TemplateView):
+    template_name = "pages/home.html"
+

@@ -8,5 +8,5 @@ from . import views
 app_name = "pages"
 
 urlpatterns = [
-    path("", views.placeholder, name="placeholder"),
+    path("", views.HomeView.as_view(), name="home"),
 ]
