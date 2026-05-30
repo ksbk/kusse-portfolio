@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}{{ site.description }}{% endblock %}">
+
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+    <body>
+        <!-- Essential keyboard accessibility escape hatch -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header class="site-header">
+            <div class="container site-header__inner">
+                <a href="{% url 'pages:home' %}" class="site-brand" aria-label="{{ site.name }} home">{{ site.name }}</a>
+
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <ul class="site-nav__list">
+                        <li><a href="{% url 'pages:home' %}">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">CV</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main landmark wrapper with focus-target capability -->
+        <main id="main-content" class="site-main">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <p>&copy; {% now "Y" %} {{ site.name }}. All rights reserved.</p>
+
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul class="footer-nav__list">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+        <!-- Load main JavaScript file after HTML parsing -->
+        <script src="{% static 'js/main.js' %}" defer></script>
+    </body>
+</html>
