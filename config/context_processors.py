@@ -1,16 +1,15 @@
 from typing import Any
+
+from django.conf import settings
 from django.http import HttpRequest
 
 def site_metadata(request: HttpRequest) -> dict[str, Any]:
     return {
         "site": {
-            "name": "Kusse Sukuta Bersha",
-            "description": "Professional profile and portfolio of Kusse Sukuta Bersha.",
-        },
-        "homepage": {
-            "eyebrow": "Hello, I'm Kusse!",
-            "title": "Welcome to Kusse's Portfolio",
-            "subtitle": "Showcasing my work and experience.",
-            "description": "Explore my projects, skills, and professional background.",
+            "name": getattr(settings, "SITE_NAME", "Kusse Sukuta Bersha"),
+            "description": getattr(
+                settings,
+                "SITE_DESCRIPTION",
+                "Professional profile and portfolio of Kusse Sukuta Bersha."),
         },
     }
