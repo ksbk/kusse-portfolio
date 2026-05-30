@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Research - {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ research_page.description }}{% endblock %}
+
+{% block content %}
+<section class="section hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <p class="eyebrow">{{ research_page.eyebrow }}</p>
+            <h1>{{ research_page.title }}</h1>
+            <p class="lead">{{ research_page.description }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Focus areas</p>
+            <h2>Research interests translated into software direction.</h2>
+        </div>
+
+        <div class="card-grid">
+            {% for area in research_page.focus_areas %}
+                <article class="card">
+                    <h2>{{ area.title }}</h2>
+                    <p>{{ area.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

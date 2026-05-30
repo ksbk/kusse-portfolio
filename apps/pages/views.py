@@ -130,3 +130,43 @@ class AboutView(TemplateView):
             ],
         }
         return context
+
+class ResearchView(TemplateView):
+    """Render the portfolio research page."""
+
+    template_name = "pages/research.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["research_page"] = {
+            "eyebrow": _("Research"),
+            "title": _("Research training applied to practical technical problems."),
+            "description": _(
+                "My research background shapes how I approach software: define the problem clearly, "
+                "study constraints, evaluate evidence, and communicate results honestly."
+            ),
+            "focus_areas": [
+                {
+                    "title": _("Scientific problem-solving"),
+                    "description": _(
+                        "Experience across physics, computer science, and chemistry gives me a broad "
+                        "foundation for analyzing complex technical systems."
+                    ),
+                },
+                {
+                    "title": _("Research software"),
+                    "description": _(
+                        "I am interested in software that supports reproducible workflows, data analysis, "
+                        "simulation, documentation, and scientific communication."
+                    ),
+                },
+                {
+                    "title": _("Applied AI and healthcare technology"),
+                    "description": _(
+                        "My long-term direction includes practical, evidence-aware technology for health, "
+                        "education, and decision support without overstating what software can do."
+                    ),
+                },
+            ],
+        }
+        return context
