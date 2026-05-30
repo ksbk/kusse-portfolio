@@ -137,3 +137,101 @@ Featured Work depends on having credible selected work available. If project evi
 The Research + Software Identity section may compete with About or Research page content if it becomes too detailed. It should summarize the positioning and route visitors to deeper pages.
 
 The Skills Summary is useful for scanning, but it should not replace project evidence. Skills should be framed as capability areas and supported elsewhere by selected work.
+
+## KP-1003 — Project Categories
+
+### Recommended Project Categories
+
+The approved project categories for the v1 Projects page are:
+
+1. Flagship Projects
+2. Research Software
+3. Applied Data and AI Projects
+4. Full-Stack and Backend Engineering
+5. Engineering Process and Technical Writing
+
+### Taxonomy Rule
+
+Flagship Projects is a featured and evidence-quality grouping, not a project type category.
+
+The remaining categories describe project type.
+
+In implementation later, each project should have one primary type category, may include optional tags, and may optionally be marked as flagship when it meets flagship criteria.
+
+### Purpose Of Each Category
+
+#### Flagship Projects
+
+Purpose: highlight the strongest, most representative evidence of professional work quality for employers, collaborators, and technical reviewers.
+
+#### Research Software
+
+Purpose: show software work grounded in scientific problem-solving, research rigor, and reproducible technical practice.
+
+#### Applied Data and AI Projects
+
+Purpose: present practical data and AI work that demonstrates Python, data processing, modeling, evaluation, and applied problem-solving.
+
+#### Full-Stack and Backend Engineering
+
+Purpose: present software engineering capability across web application development, backend architecture, APIs, and delivery-oriented implementation.
+
+#### Engineering Process and Technical Writing
+
+Purpose: provide supporting evidence of engineering process quality through documentation, architecture communication, development workflow clarity, and technical writing.
+
+### What Belongs In Each Category
+
+#### Flagship Projects
+
+Belongs here: selected high-quality projects from any primary type category when they meet flagship criteria and provide strong, defensible evidence.
+
+#### Research Software
+
+Belongs here: research tools, reproducible analysis workflows, domain-specific computational methods, and software that supports scientific investigation or research outputs.
+
+#### Applied Data and AI Projects
+
+Belongs here: data pipelines, analytical tools, applied machine learning, model-assisted applications, automation workflows, and evaluation-focused data or AI solutions.
+
+#### Full-Stack and Backend Engineering
+
+Belongs here: web applications, backend services, API-driven systems, integration projects, and implementation-focused software with clear engineering structure.
+
+#### Engineering Process and Technical Writing
+
+Belongs here: architecture documentation, implementation notes, technical guides, testing or workflow documentation, and communication artifacts that support software quality and delivery.
+
+### Distinguishing Flagship Work From Supporting Work
+
+A project should be marked as flagship only when most of the following are clearly present:
+
+- Clear problem statement.
+- Clear role and ownership.
+- Concrete technologies used.
+- Evidence such as screenshots, GitHub link, demo, docs, publication, benchmark, or reproducible artifact.
+- Modest, defensible outcome or learning result.
+- Strong fit with the site's positioning: research background plus practical software engineering.
+
+Supporting work includes credible and relevant projects that do not yet meet enough flagship criteria, but still contributes useful evidence within a primary type category.
+
+### What Should Not Be Included In V1
+
+The v1 Projects taxonomy should not include:
+
+- Placeholder projects without concrete artifacts or evidence.
+- Overstated claims about commercial success, production impact, or scale that are not clearly supported.
+- Toy or learning exercises presented as production-grade work.
+- Private client-sensitive details, confidential information, or sensitive internal context.
+- Implementation-level details that belong to later build phases rather than Sprint 1 content architecture decisions.
+- Large uncategorized project dumps that reduce clarity for target audiences.
+
+### Risks and Tradeoffs
+
+Flagship as a separate featured grouping improves evidence visibility but can create overlap with type categories. This is acceptable if primary type and flagship status are handled as separate fields in later implementation.
+
+Research Software and Applied Data and AI Projects may overlap in some projects. This should be handled by assigning a single primary type based on the project's core objective and using optional tags for secondary attributes.
+
+Engineering Process and Technical Writing strengthens repository-reviewer credibility but can dilute focus if it grows too large relative to project evidence. It should remain a supporting category rather than replacing project outcomes.
+
+A strict flagship threshold protects credibility, but early in portfolio development it may reduce the number of highlighted entries. This tradeoff is preferable to over-claiming.
