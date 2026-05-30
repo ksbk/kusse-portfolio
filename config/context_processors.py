@@ -6,5 +6,11 @@ def site_metadata(request: HttpRequest) -> dict[str, Any]:
         "site": {
             "name": "Kusse Sukuta Bersha",
             "description": "Professional profile and portfolio of Kusse Sukuta Bersha.",
-        }
+        },
+        "homepage": {
+            "eyebrow": "Hello, I'm Kusse!",
+            "title": "Welcome to Kusse's Portfolio",
+            "subtitle": "Showcasing my work and experience.",
+            "description": "Explore my projects, skills, and professional background.",
+        },
     }
