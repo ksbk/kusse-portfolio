@@ -235,3 +235,126 @@ Research Software and Applied Data and AI Projects may overlap in some projects.
 Engineering Process and Technical Writing strengthens repository-reviewer credibility but can dilute focus if it grows too large relative to project evidence. It should remain a supporting category rather than replacing project outcomes.
 
 A strict flagship threshold protects credibility, but early in portfolio development it may reduce the number of highlighted entries. This tradeoff is preferable to over-claiming.
+
+## KP-1004 — Technical Portfolio Categories
+
+### Recommended Technical Portfolio Categories
+
+The approved technical portfolio categories for v1 are:
+
+1. Python and Automation
+2. SQL and Data Modeling
+3. AI and Algorithms
+4. Full-Stack Web Development
+5. Engineering Process and Technical Writing
+
+The first four categories directly organize smaller or supporting technical portfolio entries. Engineering Process and Technical Writing is a supporting evidence category, not a replacement for project work.
+
+Technical portfolio entries should support the broader Projects section. They should not become a separate competing top-level site area.
+
+### Purpose Of Each Category
+
+#### Python and Automation
+
+Purpose: show practical scripting, workflow automation, data handling, and tool-building ability.
+
+#### SQL and Data Modeling
+
+Purpose: make database design, querying, and analytical data thinking visible as a distinct technical capability.
+
+#### AI and Algorithms
+
+Purpose: present applied AI, algorithmic reasoning, evaluation, and computational problem-solving without overstating maturity or impact.
+
+#### Full-Stack Web Development
+
+Purpose: show web development capability across backend, frontend, data-backed features, and deployment-shaped implementation decisions.
+
+#### Engineering Process and Technical Writing
+
+Purpose: provide supporting evidence of engineering discipline through documentation, architecture communication, workflow clarity, and technical explanation.
+
+### What Belongs In Each Category
+
+#### Python and Automation
+
+Belongs here: Python scripts, command-line tools, automation workflows, data cleaning utilities, file or report generation, API integrations, reusable helpers, and small productivity tools.
+
+#### SQL and Data Modeling
+
+Belongs here: schema design, query examples, reporting models, normalized data structures, analytics-ready tables, database-backed workflows, and documented reasoning about data shape or relationships.
+
+#### AI and Algorithms
+
+Belongs here: machine learning experiments, model-assisted tools, search or ranking logic, optimization work, simulations, algorithm implementations, evaluation notebooks, and applied AI prototypes with clear limitations.
+
+#### Full-Stack Web Development
+
+Belongs here: Django applications, server-rendered pages, forms, CRUD workflows, API-backed features, frontend interactions, database-backed web tools, and portfolio-site implementation case studies once they exist.
+
+#### Engineering Process and Technical Writing
+
+Belongs here: architecture notes, ADRs, implementation writeups, workflow documentation, testing notes, technical guides, and process artifacts that help reviewers understand how work was planned, built, or evaluated.
+
+### Required Metadata For Each Technical Entry
+
+Each technical portfolio entry should include:
+
+- Title
+- Category
+- Project type/context
+- Date or timeframe
+- Problem statement
+- Role and ownership
+- Tech stack
+- Scope size
+- Evidence links
+- Outcome or learning result
+- Confidentiality note if needed
+
+Optional metadata may include:
+
+- Tags
+- Notable tradeoff/decision
+- What would be improved next
+
+At minimum, an entry must include a problem statement, role and ownership, tech stack, and at least one evidence artifact to be included in v1.
+
+### Presentation Rules For Smaller, Course, Or Learning Projects
+
+Smaller, course, and learning projects may be included when they provide credible technical evidence and are presented with accurate context.
+
+Presentation rules:
+
+- Label context explicitly, for example course project, learning project, practice implementation, personal project, research support, or professional-style exercise.
+- Be precise about role and scope.
+- Do not imply production deployment, users, commercial impact, or research impact unless supported by evidence.
+- Emphasize implementation choices, constraints, lessons learned, and artifacts.
+- Require at least problem, role, stack, and one evidence artifact for inclusion.
+- Keep smaller entries concise.
+
+These rules protect credibility while still allowing smaller work to show technical range, learning discipline, and implementation judgment.
+
+### What Should Not Be Included In V1
+
+The v1 technical portfolio should not include:
+
+- Tiny snippets with no explanation or evidence.
+- Broken, unreproducible, or abandoned experiments without useful context.
+- Private client-sensitive work, real secrets, confidential datasets, or sensitive internal details.
+- Course exercises presented as original production systems.
+- AI demos that overstate model quality, autonomy, reliability, or business value.
+- Generic tutorials copied without meaningful adaptation or explanation.
+- A large dump of every repository, notebook, or script.
+- Entries with no clear audience value.
+- Claims of commercial success, production readiness, research impact, or user adoption that are not supported by evidence.
+
+### Risks and Tradeoffs
+
+Technical categories can overlap. Python automation, data modeling, AI, and web development often appear in the same project. Each entry should therefore have one primary category and may use optional tags for secondary skills.
+
+Including smaller entries can show breadth, but too many weak entries can dilute the portfolio. V1 should favor fewer entries with clear context, evidence, and professional framing.
+
+Engineering Process and Technical Writing strengthens credibility for GitHub and process reviewers, but it should remain supporting evidence. It should not replace software, data, AI, or web project evidence.
+
+Strict metadata and evidence requirements may reduce the number of entries available for v1. This tradeoff is preferable to presenting unsupported or overstated work.
