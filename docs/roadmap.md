@@ -1,49 +1,52 @@
 # drkusse.com Roadmap
 
-## Sprint 0 — Foundation
+This roadmap is a high-level planning document. Detailed actionable tasks are tracked in GitHub Issues and grouped by GitHub Milestones.
 
-- [x] DK-0001 Define product brief / project charter
-- [x] DK-0002 Define requirements
-- [x] DK-0003 Define architecture
-- [x] DK-0004 Define public repository decision
-- [x] DK-0005 Add safe repository hygiene files
+## Task ID and Tracking Convention
 
-## Sprint 1 — Content Architecture
+- `KP` stands for `Kusse Portfolio`.
+- Detailed actionable tasks are tracked in GitHub Issues.
+- Roadmap sections map to GitHub Milestones.
 
-- DK-1001 Define navigation structure
-- DK-1002 Define homepage sections
-- DK-1003 Define project categories
-- DK-1004 Define technical portfolio categories
-- DK-1005 Define CV page structure
+## Sprint 0 - Foundation
 
-## Sprint 2 — Core Pages
+- Goal: Establish planning, requirements, architecture, and repository hygiene baseline.
+- Status: Completed
+- Scope summary: Project charter, requirements, architecture, public repository decision, and safe repository setup are in place.
+- GitHub milestone reference: `Sprint 0 - Foundation`
 
-- DK-2001 Build homepage
-- DK-2002 Build about page
-- DK-2003 Build research page
-- DK-2004 Build CV page
-- DK-2005 Build contact page
+## Sprint 1 - Content Architecture
 
-## Sprint 3 — Projects and Technical Portfolio
+- Goal: Finalize information architecture and content model for all core sections.
+- Status: Planned
+- Scope summary: Navigation model, homepage section model, project and technical portfolio taxonomy, and CV structure definition.
+- GitHub milestone reference: `Sprint 1 - Content Architecture`
 
-- DK-3001 Add software projects section
-- DK-3002 Add project detail structure
-- DK-3003 Add ProofDesk as flagship project
-- DK-3004 Add selected short-form technical portfolio entries
-- DK-3005 Add project/skill grouping
+## Sprint 2 - Core Pages
 
-## Sprint 4 — Polish and Public Evidence
+- Goal: Deliver the first complete set of primary public pages.
+- Status: Planned
+- Scope summary: Homepage, About, Research, CV, and Contact pages with aligned structure and baseline responsiveness.
+- GitHub milestone reference: `Sprint 2 - Core Pages`
 
-- DK-4001 Improve responsive design
-- DK-4002 Add screenshots
-- DK-4003 Expand README with project screenshots and deployment status
-- DK-4004 Add deployment notes
-- DK-4005 Add release notes
+## Sprint 3 - Projects and Technical Portfolio
 
-## Sprint 5 — Quality and Automation
+- Goal: Publish portfolio evidence with clear project storytelling.
+- Status: Planned
+- Scope summary: Software project listing, project detail structure, flagship project presentation, and selected technical portfolio entries.
+- GitHub milestone reference: `Sprint 3 - Projects and Technical Portfolio`
 
-- DK-5001 Add automated tests
-- DK-5002 Configure linting and code style
-- DK-5003 Add GitHub Actions CI
-- DK-5004 Add CI badge to README
-  
+## Sprint 4 - Polish and Public Evidence
+
+- Goal: Improve presentation quality and public documentation completeness.
+- Status: Planned
+- Scope summary: Responsive refinements, visual artifacts, README expansion, deployment notes, and release-oriented documentation.
+- GitHub milestone reference: `Sprint 4 - Polish and Public Evidence`
+
+## Sprint 5 - Quality and Automation
+
+- Goal: Strengthen engineering quality gates and delivery reliability.
+- Status: Planned
+- Scope summary: Automated tests, linting and style consistency, CI workflows, and status signaling in repository documentation.
+- GitHub milestone reference: `Sprint 5 - Quality and Automation`
+
