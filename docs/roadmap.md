@@ -49,4 +49,3 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 - Status: Planned
 - Scope summary: Automated tests, linting and style consistency, CI workflows, and status signaling in repository documentation.
 - GitHub milestone reference: `Sprint 5 - Quality and Automation`
-
