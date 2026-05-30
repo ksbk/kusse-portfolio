@@ -88,3 +88,45 @@ class HomeView(TemplateView):
             ),
         }
         return context
+
+class AboutView(TemplateView):
+    """Render the portfolio about page."""
+
+    template_name = "pages/about.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["about_page"] = {
+            "eyebrow": _("About"),
+            "title": _("Research background, software direction, and practical technical work."),
+            "description": _(
+                "I am a research-trained technologist building a professional path across "
+                "software development, applied data work, research communication, and practical "
+                "tools for real-world problems."
+            ),
+            "sections": [
+                {
+                    "title": _("Research foundation"),
+                    "description": _(
+                        "My background in physics, computer science, and chemistry shaped how I "
+                        "approach problems: define the question carefully, examine evidence, and "
+                        "communicate uncertainty honestly."
+                    ),
+                },
+                {
+                    "title": _("Software direction"),
+                    "description": _(
+                        "I am focused on Python, Django, data-informed applications, full-stack web "
+                        "development, and research software that is clear, maintainable, and useful."
+                    ),
+                },
+                {
+                    "title": _("Working style"),
+                    "description": _(
+                        "I value readable code, structured documentation, careful naming, incremental "
+                        "delivery, and transparent engineering decisions that others can review."
+                    ),
+                },
+            ],
+        }
+        return context

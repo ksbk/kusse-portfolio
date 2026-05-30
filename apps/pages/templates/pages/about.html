@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}About - {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ about_page.description }}{% endblock %}
+
+{% block content %}
+<section class="section hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <p class="eyebrow">{{ about_page.eyebrow }}</p>
+            <h1>{{ about_page.title }}</h1>
+            <p class="lead">{{ about_page.description }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card-grid">
+            {% for section in about_page.sections %}
+                <article class="card">
+                    <h2>{{ section.title }}</h2>
+                    <p>{{ section.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
