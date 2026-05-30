@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ contact_page.description }}{% endblock %}
+
+{% block content %}
+<section class="section hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <p class="eyebrow">{{ contact_page.eyebrow }}</p>
+            <h1>{{ contact_page.title }}</h1>
+            <p class="lead">{{ contact_page.description }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Contact methods</p>
+            <h2>Choose the channel that fits the conversation.</h2>
+        </div>
+
+        <div class="card-grid">
+            {% for method in contact_page.contact_methods %}
+                <article class="card">
+                    <h2>{{ method.title }}</h2>
+                    <p>{{ method.description }}</p>
+                    <a class="button button--secondary" href="{{ method.url }}">
+                        {{ method.label }}
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section--surface">
+    <div class="container split-layout">
+        <div>
+            <p class="eyebrow">Helpful context</p>
+            <h2>{{ contact_page.note_title }}</h2>
+        </div>
+
+        <p class="lead">{{ contact_page.note }}</p>
+    </div>
+</section>
+{% endblock %}

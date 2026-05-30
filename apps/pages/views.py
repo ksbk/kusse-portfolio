@@ -279,3 +279,45 @@ class CVView(TemplateView):
             ],
         }
         return context
+    
+class ContactView(TemplateView):
+    """Render the portfolio contact page."""
+
+    template_name = "pages/contact.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["contact_page"] = {
+            "eyebrow": _("Contact"),
+            "title": _("Start a focused technical conversation."),
+            "description": _(
+                "I am open to conversations about research software, Django development, "
+                "technical documentation, portfolio systems, and practical applied software work."
+            ),
+            "contact_methods": [
+                {
+                    "title": _("Email"),
+                    "description": _("Best for direct professional inquiries and project conversations."),
+                    "label": _("Email me"),
+                    "url": "mailto:kbersha@gmail.com",
+                },
+                {
+                    "title": _("GitHub"),
+                    "description": _("Review public code, project history, documentation, and development workflow."),
+                    "label": _("View GitHub"),
+                    "url": "https://github.com/ksbk",
+                },
+                {
+                    "title": _("LinkedIn"),
+                    "description": _("Connect professionally and review my broader profile."),
+                    "label": _("View LinkedIn"),
+                    "url": "#",
+                },
+            ],
+            "note_title": _("Before contacting me"),
+            "note": _(
+                "The most useful messages include the problem, context, timeline, and what kind "
+                "of technical help or collaboration you are considering."
+            ),
+        }
+        return context
