@@ -1,18 +1,15 @@
-# drkusse.com
+# kusse-portfolio
 
-Professional portfolio website for Kusse Sukuta Bersha.
+Source repository for **drkusse.com**, the professional portfolio website of Kusse Sukuta Bersha.
 
-This repository is maintained as a public engineering artifact. It demonstrates not only the final website, but also the planning, documentation, and development process behind it.
+This repository is intentionally transparent: it includes the site source, planning documents, architecture decisions, and development history behind the portfolio.
 
-## Purpose
+## Focus Areas
 
-drkusse.com presents:
-
-- Research background
-- Software development projects
-- Technical portfolio
-- Applied work in AI, data, Python, and web development
-- CV and contact information
+- Research background and scientific problem-solving
+- Python, data, and applied AI
+- Full-stack web development
+- Research software and technical writing
 
 ## Project Documentation
 
@@ -22,10 +19,6 @@ drkusse.com presents:
 - [Roadmap](docs/roadmap.md)
 - [Architecture Decisions](docs/decisions/)
 
-## Documentation Format
-
-Project documentation is written in Markdown for GitHub-facing visibility. reStructuredText may be introduced later only if Sphinx or formal Python/Django developer documentation is needed. Current docs will not be converted to `.rst`.
-
 ## Status
 
-Active development. See the [Roadmap](docs/roadmap.md) for current sprint status.
+Active development. See the [Roadmap](docs/roadmap.md) for current priorities.
