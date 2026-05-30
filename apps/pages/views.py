@@ -170,3 +170,53 @@ class ResearchView(TemplateView):
             ],
         }
         return context
+
+class ProjectsView(TemplateView):
+    """Render the portfolio projects page shell."""
+
+    template_name = "pages/projects.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["projects_page"] = {
+            "eyebrow": _("Projects"),
+            "title": _("Selected software, research, and technical work."),
+            "description": _(
+                "This page will become a structured portfolio of selected projects. "
+                "For now, it introduces the main categories of work that will be expanded "
+                "with stronger evidence, links, and case studies."
+            ),
+            "categories": [
+                {
+                    "title": _("Flagship projects"),
+                    "description": _(
+                        "Larger, higher-evidence projects that best represent my current technical direction."
+                    ),
+                },
+                {
+                    "title": _("Research software"),
+                    "description": _(
+                        "Tools, workflows, simulations, and technical work connected to research practice."
+                    ),
+                },
+                {
+                    "title": _("Applied Python and data"),
+                    "description": _(
+                        "Practical projects involving Python, automation, data handling, and applied AI concepts."
+                    ),
+                },
+                {
+                    "title": _("Full-stack and backend engineering"),
+                    "description": _(
+                        "Web applications and backend systems built with attention to structure, maintainability, and deployment."
+                    ),
+                },
+                {
+                    "title": _("Engineering process and documentation"),
+                    "description": _(
+                        "Work that demonstrates planning, documentation, testing, technical communication, and reviewable decisions."
+                    ),
+                },
+            ],
+        }
+        return context
