@@ -12,6 +12,15 @@ env_file = BASE_DIR / ".env"
 if env_file.exists():
     env.read_env(env_file)
 
+SITE_NAME = env("SITE_NAME", default="Kusse Sukuta Bersha")
+SITE_DESCRIPTION = env(
+    "SITE_DESCRIPTION",
+    default="Professional profile and portfolio of Kusse Sukuta Bersha.",
+)
+SITE_GITHUB_URL = env("SITE_GITHUB_URL", default="")
+SITE_LINKEDIN_URL = env("SITE_LINKEDIN_URL", default="")
+
+
 SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = env.bool("DEBUG", default=False)

@@ -42,15 +42,16 @@
 
                 <nav class="footer-nav" aria-label="Footer navigation">
                     <ul class="footer-nav__list">
-                        <li><a href="https://github.com/ksbk">GitHub</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                        {% if site.social_links.github %}
+                            <li><a href="{{ site.social_links.github }}">GitHub</a></li>
+                        {% endif %}
+                        {% if site.social_links.linkedin %}
+                            <li><a href="{{ site.social_links.linkedin }}">LinkedIn</a></li>
+                        {% endif %}
                         <li><a href="{% url 'pages:contact' %}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </footer>
-
-        <!-- Load main JavaScript file after HTML parsing -->
-        <script src="{% static 'js/main.js' %}" defer></script>
     </body>
 </html>

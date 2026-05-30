@@ -1,33 +1,3 @@
-.button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-4);
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    border-radius: var(--space-md);
-    padding: var(--space-3) var(--space-4);
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-}
-
-.button-primary {
-    background: var(--color-primary);
-    color: var(--color-surface);
-}
-
-.button-secondary {
-    background: var(--color-surface);
-    color: var(--color-surface);
-    border-color: var(--color-border);
-}
-
 .skip-link {
     position: absolute;
     left: -999px;
