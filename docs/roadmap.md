@@ -29,21 +29,21 @@
 - DK-3001 Add software projects section
 - DK-3002 Add project detail structure
 - DK-3003 Add ProofDesk as flagship project
-- DK-3004 Add selected CS50 technical portfolio entries
+- DK-3004 Add selected short-form technical portfolio entries
 - DK-3005 Add project/skill grouping
 
 ## Sprint 4 — Polish and Public Evidence
 
 - DK-4001 Improve responsive design
 - DK-4002 Add screenshots
-- DK-4003 Complete README
+- DK-4003 Expand README with project screenshots and deployment status
 - DK-4004 Add deployment notes
 - DK-4005 Add release notes
 
 ## Sprint 5 — Quality and Automation
 
-- DK-5001 Add basic tests or checks
-- DK-5002 Add linting if appropriate
+- DK-5001 Add automated tests
+- DK-5002 Configure linting and code style
 - DK-5003 Add GitHub Actions CI
 - DK-5004 Add CI badge to README
   

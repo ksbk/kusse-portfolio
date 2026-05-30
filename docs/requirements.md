@@ -12,8 +12,6 @@
 - Mobile-responsive design
 - Accessible navigation
 - Project detail pages or project cards
-- Public README
-- Public documentation
 - No secrets committed
 
 ## Should Have
@@ -21,7 +19,7 @@
 - Screenshots
 - GitHub links for selected projects
 - Skills grouped by category
-- CS50 projects presented professionally
+- Selected technical projects demonstrate relevant skills, implementation decisions, and learning outcomes
 - Basic SEO metadata
 - Open Graph metadata
 - Simple contact CTA

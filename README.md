@@ -11,7 +11,7 @@ drkusse.com presents:
 - Research background
 - Software development projects
 - Technical portfolio
-- AI, SQL, Python, and web development foundations
+- Applied work in AI, data, Python, and web development
 - CV and contact information
 
 ## Project Documentation
@@ -28,4 +28,4 @@ Project documentation is written in Markdown for GitHub-facing visibility. reStr
 
 ## Status
 
-Early foundation stage.
+Active development. See the [Roadmap](docs/roadmap.md) for current sprint status.

@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-drkusse.com is intended to support professional visibility for employment, freelance work, research collaboration, and software credibility. The repository should therefore show not only the final website, but also the development process.
+drkusse.com is intended to support professional visibility for employment, freelance work, research collaboration, and technical credibility. The repository should therefore show not only the final website, but also the development process.
 
 ## Decision
 

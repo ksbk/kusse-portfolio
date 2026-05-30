@@ -19,7 +19,7 @@ The website should demonstrate both professional identity and practical software
 
 ## Value Proposition
 
-drkusse.com connects scientific research, software development, web engineering, AI/data foundations, and practical product thinking.
+drkusse.com brings together research work, software projects, and engineering process in a single credible public presence.
 
 ## MVP Scope
 
@@ -46,7 +46,7 @@ drkusse.com connects scientific research, software development, web engineering,
 
 ## Success Criteria
 
-- The site clearly presents Kusse Sukuta Bersha as a researcher-developer.
+- The site clearly presents Kusse Sukuta Bersha as a researcher and software developer.
 - The site highlights selected software, research, and technical portfolio work.
 - The site is responsive on mobile, tablet, and desktop widths.
 - The public repository demonstrates professional process through docs, issues, milestones, commits, and screenshots.

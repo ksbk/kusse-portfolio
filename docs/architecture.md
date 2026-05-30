@@ -27,4 +27,4 @@ drkusse.com is a server-rendered professional portfolio website built with Djang
 
 ## Deployment
 
-The initial deployment target is still to be decided. The project should remain deployable to a standard Python/Django-friendly platform using environment variables for configuration.
+Deployment target is not yet finalised. The project is structured for compatibility with standard Python/Django hosting platforms, using environment variables for configuration.
