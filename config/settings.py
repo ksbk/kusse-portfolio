@@ -2,15 +2,21 @@
 
 from pathlib import Path
 
+import environ
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Development-only placeholder. Proper environment loading is handled in KP-2002.
-SECRET_KEY = "django-insecure-development-placeholder"
+env = environ.Env()
+env_file = BASE_DIR / ".env"
+if env_file.exists():
+    env.read_env(env_file)
 
-DEBUG = True
+SECRET_KEY = env("SECRET_KEY")
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+DEBUG = env.bool("DEBUG", default=False)
+
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["127.0.0.1", "localhost"])
 
 INSTALLED_APPS = [
     "django.contrib.admin",
