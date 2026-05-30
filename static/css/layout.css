@@ -70,3 +70,31 @@
         flex-direction: column;
     }
 }
+.hero {
+    background: var(--color-surface);
+}
+
+.hero__inner {
+    padding-block: var(--space-12);
+}
+
+.hero__content {
+    max-width: 52rem;
+}
+
+.section--surface {
+    background: var(--color-surface);
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.8fr);
+    gap: var(--space-8);
+    align-items: start;
+}
+
+@media (max-width: 56rem) {
+    .split-layout {
+        grid-template-columns: 1fr;
+    }
+}
