@@ -220,3 +220,62 @@ class ProjectsView(TemplateView):
             ],
         }
         return context
+
+class CVView(TemplateView):
+    """Render the portfolio CV page."""
+
+    template_name = "pages/cv.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["cv_page"] = {
+            "eyebrow": _("CV"),
+            "title": _("Professional profile and technical background."),
+            "description": _(
+                "A concise web CV summarizing my research training, technical skills, "
+                "software direction, and selected areas of work."
+            ),
+            "summary": _(
+                "Research-trained software developer with a background across physics, "
+                "computer science, and chemistry. I am focused on Python, Django, data-informed "
+                "applications, research software, and clear technical communication."
+            ),
+            "skill_groups": [
+                {
+                    "title": _("Software development"),
+                    "items": [_("Python"), _("Django"), _("HTML"), _("CSS"), _("JavaScript"), _("SQL")],
+                },
+                {
+                    "title": _("Research and data"),
+                    "items": [_("Scientific reasoning"), _("Data analysis"), _("Applied AI concepts"), _("Technical writing")],
+                },
+                {
+                    "title": _("Engineering practice"),
+                    "items": [_("Git"), _("GitHub workflow"), _("Documentation"), _("Testing"), _("Incremental delivery")],
+                },
+            ],
+            "sections": [
+                {
+                    "title": _("Research background"),
+                    "description": _(
+                        "Academic training across science and computing, with experience in structured "
+                        "problem-solving, experimentation, analysis, and communication."
+                    ),
+                },
+                {
+                    "title": _("Software direction"),
+                    "description": _(
+                        "Current work focuses on professional web development, Django applications, "
+                        "portfolio systems, research software, and practical applied AI/data tools."
+                    ),
+                },
+                {
+                    "title": _("Selected work"),
+                    "description": _(
+                        "This portfolio itself is being built as public evidence of planning, implementation, "
+                        "documentation, typed configuration, GitHub workflow, and incremental delivery."
+                    ),
+                },
+            ],
+        }
+        return context

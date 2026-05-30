@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}CV - {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ cv_page.description }}{% endblock %}
+
+{% block content %}
+<section class="section hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <p class="eyebrow">{{ cv_page.eyebrow }}</p>
+            <h1>{{ cv_page.title }}</h1>
+            <p class="lead">{{ cv_page.description }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container split-layout">
+        <div>
+            <p class="eyebrow">Summary</p>
+            <h2>Research-trained technical profile.</h2>
+        </div>
+
+        <p class="lead">{{ cv_page.summary }}</p>
+    </div>
+</section>
+
+<section class="section section--surface">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Skills</p>
+            <h2>Core capabilities grouped by work area.</h2>
+        </div>
+
+        <div class="card-grid">
+            {% for group in cv_page.skill_groups %}
+                <article class="card">
+                    <h2>{{ group.title }}</h2>
+                    <ul class="tag-list" aria-label="{{ group.title }}">
+                        {% for item in group.items %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Profile</p>
+            <h2>Education, software direction, and selected work.</h2>
+        </div>
+
+        <div class="card-grid">
+            {% for section in cv_page.sections %}
+                <article class="card">
+                    <h2>{{ section.title }}</h2>
+                    <p>{{ section.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
