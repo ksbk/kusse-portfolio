@@ -1,0 +1,27 @@
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: var(--space-2);
+    z-index: 100;
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-text);
+    color: var(--color-surface);
+}
+
+.skip-link:focus {
+    left: var(--space-2);
+}
+
+.eyebrow {
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 42rem;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lead);
+}
