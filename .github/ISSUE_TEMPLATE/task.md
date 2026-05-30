@@ -16,9 +16,9 @@ Describe what should be changed.
 
 ## Acceptance Criteria
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
 
 ## Notes
 
