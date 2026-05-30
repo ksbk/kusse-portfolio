@@ -358,3 +358,80 @@ Including smaller entries can show breadth, but too many weak entries can dilute
 Engineering Process and Technical Writing strengthens credibility for GitHub and process reviewers, but it should remain supporting evidence. It should not replace software, data, AI, or web project evidence.
 
 Strict metadata and evidence requirements may reduce the number of entries available for v1. This tradeoff is preferable to presenting unsupported or overstated work.
+
+## KP-1005 — CV Page Structure
+
+### Section Order
+
+The approved CV page section order for v1 is:
+
+1. Professional Summary
+2. Core Skills
+3. Selected Projects
+4. Research and Education
+5. Professional Context
+6. Contact and Download CTA
+
+The CV page should be more structured than About but less exhaustive than a downloadable resume. It should support scanning first, then link deeper to Projects, Research, and Contact.
+
+### Section Purposes and Content
+
+#### Professional Summary
+
+Purpose: give employers, recruiters, collaborators, and technical reviewers a fast, credible read on professional identity.
+
+Belongs here: a concise summary positioning Kusse Sukuta Bersha as a research-trained software developer working across Python, data, applied AI, full-stack web development, research software, and technical writing. The summary should be professional, factual, modest, and brief.
+
+#### Core Skills
+
+Purpose: make capabilities scannable before readers reach detailed project, research, or professional context.
+
+Belongs here: grouped skills aligned with the site's technical positioning, such as Python and automation, SQL and data modeling, AI and algorithms, full-stack web development, and research software or technical writing. This section should stay concise and should avoid becoming an unstructured keyword list.
+
+#### Selected Projects
+
+Purpose: connect the CV page to evidence in the Projects section.
+
+Belongs here: a small set of representative projects or technical entries, prioritizing flagship or clearly relevant work. Each item should include title, short context, role, technologies, and an evidence link when available. Full project detail belongs on the Projects page.
+
+#### Research and Education
+
+Purpose: support research collaborators, academic reviewers, research software teams, and employers who need academic or research context.
+
+Belongs here: degrees, research background, selected research themes, relevant academic work, and research software context. This section should be factual and should not overstate research impact.
+
+#### Professional Context
+
+Purpose: provide enough career and work context for CV readers without turning the web page into a complete resume.
+
+Belongs here: relevant roles, research roles, technical responsibilities, freelance or client context if appropriate, and professional-style project work. This section should be precise about role, scope, and evidence, and should not overstate employment history, production impact, client work, or commercial outcomes.
+
+#### Contact and Download CTA
+
+Purpose: give readers a clear next step after reviewing the CV page.
+
+Belongs here: contact link, email path, LinkedIn and GitHub links where appropriate, and a PDF CV download only if a maintained PDF exists. If a maintained PDF is not available, PDF download should be documented as a future option rather than presented as available.
+
+### What Should Not Be Included In V1
+
+The v1 CV page should not include:
+
+- A full autobiography or long personal narrative.
+- Every project, repository, script, or technical entry.
+- A complete downloadable resume duplicated directly into the page.
+- Private or sensitive personal details.
+- Private client-sensitive details, confidential datasets, or sensitive internal context.
+- Unverified claims about employment history, production impact, users, commercial outcomes, research impact, or client work.
+- A large unstructured skills keyword list.
+- Blog, Writing, Architecture, Roadmap, ADR, milestone, or issue content.
+- Login, admin, payments, private dashboards, comments, or client portal concepts.
+
+### Risks and Tradeoffs
+
+The CV page can become too broad if it tries to duplicate About, Projects, Research, and a full resume. The page should therefore prioritize structure, scanning, and routing to deeper pages.
+
+Selected Projects strengthens the CV page with evidence, but including too many entries can make the page feel like a project catalogue. V1 should feature a small representative set and link to Projects for full detail.
+
+Core Skills helps recruiters scan quickly, but it can become generic if it is not connected to evidence. Skills should be grouped and supported by selected projects, technical portfolio entries, or research context.
+
+The PDF CV download is useful only if it is maintained. Publishing an outdated or unavailable PDF would weaken trust, so it should remain a future option until the artifact exists and can be kept current.
