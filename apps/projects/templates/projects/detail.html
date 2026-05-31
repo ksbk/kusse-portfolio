@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} | {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ project.summary }}{% endblock %}
+
+{% block content %}
+    <section class="section hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="eyebrow">{{ project.get_category_display }} · {{ project.get_status_display }}</p>
+                <h1>{{ project.title }}</h1>
+                <p class="lead">{{ project.summary }}</p>
+
+                {% if project.repository_url or project.live_url or project.documentation_url %}
+                    <ul class="tag-list">
+                        {% if project.repository_url %}
+                            <li><a href="{{ project.repository_url }}">Repository</a></li>
+                        {% endif %}
+                        {% if project.live_url %}
+                            <li><a href="{{ project.live_url }}">Live site</a></li>
+                        {% endif %}
+                        {% if project.documentation_url %}
+                            <li><a href="{{ project.documentation_url }}">Documentation</a></li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--surface">
+        <div class="container">
+            <div class="card-grid">
+                <article class="card">
+                    <p class="card__label">Role</p>
+                    <h2>Responsibility</h2>
+                    <p>{{ project.role }}</p>
+                </article>
+
+                <article class="card">
+                    <p class="card__label">Technology</p>
+                    <h2>Tech stack</h2>
+                    <p>{{ project.tech_stack }}</p>
+                </article>
+
+                {% if project.problem_context %}
+                    <article class="card">
+                        <p class="card__label">Context</p>
+                        <h2>Problem context</h2>
+                        <p>{{ project.problem_context }}</p>
+                    </article>
+                {% endif %}
+
+                {% if project.technical_approach %}
+                    <article class="card">
+                        <p class="card__label">Implementation</p>
+                        <h2>Technical approach</h2>
+                        <p>{{ project.technical_approach }}</p>
+                    </article>
+                {% endif %}
+            </div>
+
+            <p>
+                <a href="{% url 'projects:index' %}">Back to projects</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}

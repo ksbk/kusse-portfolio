@@ -106,3 +106,53 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "https://github.com/example/project")
         self.assertContains(response, "https://example.com")
         self.assertContains(response, "https://docs.example.com")
+        
+        
+        
+class ProjectDetailViewTests(TestCase):
+    def test_project_detail_renders_project_record(self) -> None:
+        project = Project.objects.create(
+            title="Portfolio Platform",
+            slug="portfolio-platform",
+            summary="Professional portfolio website project.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.ACTIVE,
+            role="Solo developer",
+            tech_stack="Python, Django",
+            problem_context="A need for a structured professional portfolio.",
+            technical_approach="Built with Django apps, templates, and tests.",
+            repository_url="https://github.com/example/portfolio-platform",
+        )
+
+        response = self.client.get(reverse("projects:detail", args=[project.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "projects/detail.html")
+        self.assertContains(response, "Portfolio Platform")
+        self.assertContains(response, "Professional portfolio website project.")
+        self.assertContains(response, "Solo developer")
+        self.assertContains(response, "Python, Django")
+        self.assertContains(response, "A need for a structured professional portfolio.")
+        self.assertContains(response, "Built with Django apps, templates, and tests.")
+        self.assertContains(response, "Repository")
+
+    def test_project_detail_returns_404_for_missing_slug(self) -> None:
+        response = self.client.get(reverse("projects:detail", args=["missing-project"]))
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_projects_index_links_to_detail_page(self) -> None:
+        project = Project.objects.create(
+            title="Linked Project",
+            slug="linked-project",
+            summary="Project shown on the index page.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("projects:detail", args=[project.slug]))

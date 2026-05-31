@@ -1,10 +1,18 @@
 """Views for structured project portfolio pages."""
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from django.views.generic import TemplateView
+from django.views.generic import DetailView, TemplateView
 
 from .models import Project
+
+
+if TYPE_CHECKING:
+    ProjectDetailViewBase = DetailView[Project]
+else:
+    ProjectDetailViewBase = DetailView
+
+
 class ProjectIndexView(TemplateView):
     """Render the structured projects index page."""
 
@@ -22,3 +30,11 @@ class ProjectIndexView(TemplateView):
         }
         context["projects"] = Project.objects.all()
         return context
+
+
+class ProjectDetailView(ProjectDetailViewBase):
+    """Render the structured projects detail page."""
+
+    model = Project
+    template_name = "projects/detail.html"
+    context_object_name = "project"
