@@ -1,5 +1,8 @@
 from typing import cast
 
+from io import StringIO
+
+from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 
@@ -156,3 +159,28 @@ class ProjectDetailViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, reverse("projects:detail", args=[project.slug]))
+        
+class SeedProjectsCommandTests(TestCase):
+    def test_seed_projects_creates_initial_project_records(self) -> None:
+        output = StringIO()
+
+        call_command("seed_projects", stdout=output)
+
+        self.assertEqual(Project.objects.count(), 5)
+        self.assertTrue(
+            Project.objects.filter(
+                slug="traffic-sign-image-classifier",
+                title="Traffic Sign Image Classifier",
+            ).exists()
+        )
+        self.assertIn("5 created, 0 updated", output.getvalue())
+
+    def test_seed_projects_is_safe_to_rerun(self) -> None:
+        first_output = StringIO()
+        second_output = StringIO()
+
+        call_command("seed_projects", stdout=first_output)
+        call_command("seed_projects", stdout=second_output)
+
+        self.assertEqual(Project.objects.count(), 5)
+        self.assertIn("0 created, 5 updated", second_output.getvalue())
