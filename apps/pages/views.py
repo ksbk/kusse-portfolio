@@ -14,10 +14,10 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context["homepage"] = {
-            "eyebrow": _("Research-trained software developer"),
+            "eyebrow": _("Software developer with a research background"),
             "title": _(
-                "I build practical software with a researcher's attention "
-                "to evidence, clarity, and real-world constraints."
+                "I build software with attention to clarity, evidence, "
+                "and real-world constraints."
             ),
             "description": _(
                 "This portfolio brings together my work across Python, data, "
@@ -98,9 +98,9 @@ class AboutView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["about_page"] = {
             "eyebrow": _("About"),
-            "title": _("Research background, software direction, and practical technical work."),
+            "title": _("Research background, software direction, and technical work."),
             "description": _(
-                "I am a research-trained technologist building a professional path across "
+                "I am building a professional path across "
                 "software development, applied data work, research communication, and practical "
                 "tools for real-world problems."
             ),
@@ -140,7 +140,7 @@ class ResearchView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["research_page"] = {
             "eyebrow": _("Research"),
-            "title": _("Research training applied to practical technical problems."),
+            "title": _("Research training applied to technical problem-solving."),
             "description": _(
                 "My research background shapes how I approach software: define the problem clearly, "
                 "study constraints, evaluate evidence, and communicate results honestly."
@@ -230,13 +230,13 @@ class CVView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["cv_page"] = {
             "eyebrow": _("CV"),
-            "title": _("Professional profile and technical background."),
+            "title": _("Professional profile and technical background"),
             "description": _(
                 "A concise web CV summarizing my research training, technical skills, "
                 "software direction, and selected areas of work."
             ),
             "summary": _(
-                "Research-trained software developer with a background across physics, "
+                "Software developer with research training across physics, "
                 "computer science, and chemistry. I am focused on Python, Django, data-informed "
                 "applications, research software, and clear technical communication."
             ),
@@ -289,7 +289,7 @@ class ContactView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["contact_page"] = {
             "eyebrow": _("Contact"),
-            "title": _("Start a focused technical conversation."),
+            "title": _("Start a focused conversation."),
             "description": _(
                 "I am open to conversations about research software, Django development, "
                 "technical documentation, portfolio systems, and practical applied software work."
