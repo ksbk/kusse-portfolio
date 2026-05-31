@@ -1,6 +1,7 @@
 from typing import cast
 
 from django.test import TestCase
+from django.urls import reverse
 
 from .models import Project, ProjectCategory, ProjectStatus
 
@@ -54,3 +55,54 @@ class ProjectModelTests(TestCase):
     def test_slug_field_is_unique(self) -> None:
         slug_field = Project._meta.get_field("slug")
         self.assertTrue(getattr(slug_field, "unique", False))
+
+
+class ProjectIndexViewTests(TestCase):
+    def test_projects_index_renders_empty_state(self) -> None:
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Projects will be added soon")
+        self.assertTemplateUsed(response, "projects/index.html")
+
+    def test_projects_index_renders_project_records(self) -> None:
+        Project.objects.create(
+            title="Portfolio Platform",
+            slug="portfolio-platform",
+            summary="Professional portfolio website project.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.ACTIVE,
+            role="Solo developer",
+            tech_stack="Python, Django",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Portfolio Platform")
+        self.assertContains(response, "Professional portfolio website project.")
+        self.assertContains(response, "Python, Django")
+
+    def test_projects_index_renders_available_links(self) -> None:
+        Project.objects.create(
+            title="Public Project",
+            slug="public-project",
+            summary="Project with supporting links.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+            repository_url="https://github.com/example/project",
+            live_url="https://example.com",
+            documentation_url="https://docs.example.com",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Repository")
+        self.assertContains(response, "Live site")
+        self.assertContains(response, "Documentation")
+        self.assertContains(response, "https://github.com/example/project")
+        self.assertContains(response, "https://example.com")
+        self.assertContains(response, "https://docs.example.com")

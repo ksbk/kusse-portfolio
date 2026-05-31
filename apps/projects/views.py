@@ -4,7 +4,7 @@ from typing import Any
 
 from django.views.generic import TemplateView
 
-
+from .models import Project
 class ProjectIndexView(TemplateView):
     """Render the structured projects index page."""
 
@@ -20,4 +20,5 @@ class ProjectIndexView(TemplateView):
                 "and implementation experience."
             ),
         }
+        context["projects"] = Project.objects.all()
         return context

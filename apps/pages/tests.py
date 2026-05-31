@@ -1,10 +1,10 @@
 """Baseline route and template tests for public portfolio pages."""
 
-from django.test import SimpleTestCase
+from django.test import TestCase
 from django.urls import reverse
 
 
-class PageRouteTests(SimpleTestCase):
+class PageRouteTests(TestCase):
     """Verify public portfolio pages render successfully."""
 
     def test_homepage_renders_expected_template(self) -> None:
