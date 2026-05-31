@@ -24,8 +24,9 @@ class ProjectIndexView(TemplateView):
             "eyebrow": "Projects",
             "title": "Technical projects",
             "description": (
-                "A structured overview of selected projects, technical work, "
-                "and implementation experience."
+                "Selected projects from my computer science, AI, Python, database, "
+                "and systems programming practice, organized to show the problems "
+                "solved, tools used, and technical decisions made."
             ),
         }
         context["projects"] = Project.objects.all()
