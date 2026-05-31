@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ projects_index.title }} | {{ site.name }}{% endblock %}
+
+{% block meta_description %}{{ projects_index.description }}{% endblock %}
+
+{% block content %}
+    <section class="section hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="eyebrow">{{ projects_index.eyebrow }}</p>
+                <h1>{{ projects_index.title }}</h1>
+                <p class="lead">{{ projects_index.description }}</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

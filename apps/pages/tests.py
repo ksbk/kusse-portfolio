@@ -26,10 +26,10 @@ class PageRouteTests(SimpleTestCase):
         self.assertTemplateUsed(response, "pages/research.html")
 
     def test_projects_page_renders_expected_template(self) -> None:
-        response = self.client.get(reverse("pages:projects"))
+        response = self.client.get(reverse("projects:index"))
 
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "pages/projects.html")
+        self.assertTemplateUsed(response, "projects/index.html")
 
     def test_cv_page_renders_expected_template(self) -> None:
         response = self.client.get(reverse("pages:cv"))
