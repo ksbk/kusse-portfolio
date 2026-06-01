@@ -81,6 +81,12 @@ uv run mypy config apps
 uv run python manage.py test apps.pages apps.projects
 ```
 
+The same local quality gate can also be run with:
+
+```bash
+make quality
+```
+
 ## Project Structure
 
 ```text

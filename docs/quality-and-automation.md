@@ -55,6 +55,12 @@ uv run mypy config apps
 uv run python manage.py test apps.pages apps.projects
 ```
 
+Equivalent Makefile shortcut:
+
+```bash
+make quality
+```
+
 A change should not be committed if any of these checks fail.
 
 ## Planned Quality Improvements
