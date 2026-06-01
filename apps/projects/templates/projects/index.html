@@ -41,14 +41,6 @@
                             <p><strong>Role:</strong> {{ project.role }}</p>
                             <p><strong>Tech stack:</strong> {{ project.tech_stack }}</p>
 
-                            {% if project.problem_context %}
-                                <p><strong>Context:</strong> {{ project.problem_context }}</p>
-                            {% endif %}
-
-                            {% if project.technical_approach %}
-                                <p><strong>Technical approach:</strong> {{ project.technical_approach }}</p>
-                            {% endif %}
-
                             {% if project.repository_url or project.live_url or project.documentation_url %}
                                 <ul class="tag-list">
                                     {% if project.repository_url %}
@@ -62,6 +54,10 @@
                                     {% endif %}
                                 </ul>
                             {% endif %}
+
+                            <p>
+                                <a href="{% url 'projects:detail' slug=project.slug %}">View project details</a>
+                            </p>
                         </article>
                     {% endfor %}
                 </div>
