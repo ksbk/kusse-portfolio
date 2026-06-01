@@ -109,7 +109,7 @@ The hook runs automatically on each `git commit`.
 Initial hooks should stay small and fast.
 
 ### GitHub Actions CI
-Status: planned.
+Status: active.
 
 Purpose:
 
@@ -117,15 +117,7 @@ Purpose:
 - Make the public repository more reviewable.
 - Provide visible evidence that the project passes its quality gates.
 
-The first CI workflow should run:
-
-```bash
-uv run python manage.py check
-uv run mypy config apps
-uv run python manage.py test apps.pages apps.projects
-```
-
-Ruff can be added to CI after it is configured locally.
+CI runs `make quality`, which includes the Django system check, mypy, tests, and Ruff.
 
 ## Deferred Automation
 
