@@ -88,13 +88,23 @@ Configuration is conservative: rules E, F, W, and I are enabled. E501 (line leng
 Initial use should be conservative. The project should avoid enabling too many rules at once.
 
 ### Pre-commit
-Status: planned.
+Status: active.
 
 Purpose:
 
 - Run lightweight checks before commits.
 - Catch formatting or linting issues early.
 - Avoid committing avoidable mistakes.
+
+Pre-commit currently runs Ruff only. mypy and Django tests are intentionally not run in pre-commit — they are slower and belong in the full quality gate (`make quality`).
+
+Install hooks once after `uv sync`:
+
+```bash
+make install-hooks
+```
+
+The hook runs automatically on each `git commit`.
 
 Initial hooks should stay small and fast.
 

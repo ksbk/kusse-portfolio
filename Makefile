@@ -1,4 +1,4 @@
-.PHONY: check typecheck test migrate seed quality runserver lint
+.PHONY: check typecheck test migrate seed quality runserver lint install-hooks
 
 check:
 	uv run python manage.py check
@@ -22,3 +22,6 @@ runserver:
 
 lint:
 	uv run ruff check config apps
+
+install-hooks:
+	uv run pre-commit install

@@ -43,6 +43,12 @@ Install dependencies:
 uv sync
 ```
 
+Install pre-commit hooks (once, after `uv sync`):
+
+```bash
+make install-hooks
+```
+
 Create a local environment file:
 
 ```bash
