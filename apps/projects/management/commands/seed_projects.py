@@ -6,7 +6,6 @@ from django.core.management.base import BaseCommand
 
 from apps.projects.models import Project, ProjectCategory, ProjectStatus
 
-
 PROJECT_RECORDS: list[dict[str, Any]] = [
     {
         "title": "Traffic Sign Image Classifier",

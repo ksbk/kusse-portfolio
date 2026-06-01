@@ -79,12 +79,19 @@ http://127.0.0.1:8000/
 uv run python manage.py check
 uv run mypy config apps
 uv run python manage.py test apps.pages apps.projects
+uv run ruff check config apps
 ```
 
 The same local quality gate can also be run with:
 
 ```bash
 make quality
+```
+
+Run linting alone with:
+
+```bash
+make lint
 ```
 
 ## Project Structure

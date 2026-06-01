@@ -279,7 +279,7 @@ class CVView(TemplateView):
             ],
         }
         return context
-    
+
 class ContactView(TemplateView):
     """Render the portfolio contact page."""
 

@@ -53,6 +53,7 @@ Before committing feature, content, or template changes, run:
 uv run python manage.py check
 uv run mypy config apps
 uv run python manage.py test apps.pages apps.projects
+uv run ruff check config apps
 ```
 
 Equivalent Makefile shortcut:
@@ -68,13 +69,21 @@ A change should not be committed if any of these checks fail.
 The following tools are planned, but intentionally added step by step.
 
 ### Ruff
-Status: planned.
+Status: active.
 
 Purpose:
 
 - Python linting.
 - Import cleanup.
 - Formatting consistency where appropriate.
+
+Run with:
+
+```bash
+make lint
+```
+
+Configuration is conservative: rules E, F, W, and I are enabled. E501 (line length) is ignored. `make quality` now includes `make lint`.
 
 Initial use should be conservative. The project should avoid enabling too many rules at once.
 

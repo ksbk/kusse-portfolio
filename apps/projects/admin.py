@@ -1,8 +1,8 @@
-from django.contrib import admin
 from typing import TYPE_CHECKING
 
-from .models import Project
+from django.contrib import admin
 
+from .models import Project
 
 if TYPE_CHECKING:
     ProjectAdminBase = admin.ModelAdmin[Project]

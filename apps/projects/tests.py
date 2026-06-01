@@ -1,6 +1,5 @@
-from typing import cast
-
 from io import StringIO
+from typing import cast
 
 from django.core.management import call_command
 from django.test import TestCase
@@ -109,9 +108,9 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "https://github.com/example/project")
         self.assertContains(response, "https://example.com")
         self.assertContains(response, "https://docs.example.com")
-        
-        
-        
+
+
+
 class ProjectDetailViewTests(TestCase):
     def test_project_detail_renders_project_record(self) -> None:
         project = Project.objects.create(
@@ -159,7 +158,7 @@ class ProjectDetailViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, reverse("projects:detail", args=[project.slug]))
-        
+
 class SeedProjectsCommandTests(TestCase):
     def test_seed_projects_creates_initial_project_records(self) -> None:
         output = StringIO()
