@@ -307,12 +307,6 @@ class ContactView(TemplateView):
                     "label": _("View GitHub"),
                     "url": "https://github.com/ksbk",
                 },
-                {
-                    "title": _("LinkedIn"),
-                    "description": _("Connect professionally and review my broader profile."),
-                    "label": _("View LinkedIn"),
-                    "url": "#",
-                },
             ],
             "note_title": _("Before contacting me"),
             "note": _(
