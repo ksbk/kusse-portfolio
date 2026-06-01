@@ -127,4 +127,4 @@ docs/          Project planning, requirements, architecture, and decisions
 
 Project records can be edited through Django admin. The `seed_projects` command recreates the initial project records in a new database or development environment.
 
-More automation, deployment documentation, and public evidence links will be added in later milestones.
+Additional automation, deployment documentation, and public evidence links may be added in later milestones.

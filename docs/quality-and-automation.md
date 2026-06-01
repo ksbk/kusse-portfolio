@@ -1,12 +1,12 @@
 # Quality and Automation Plan
 
-This document defines the current and planned quality checks for the Kusse Portfolio project.
+This document defines the current quality checks and deferred automation for the Kusse Portfolio project.
 
 The goal is to keep the project reliable and reviewable without adding unnecessary automation before it is useful.
 
 ## Current Quality Checks
 
-The project currently uses three required local checks.
+The project currently uses a four-part local quality gate: Django system check, mypy, tests, and Ruff.
 
 ### Django system check
 
@@ -64,9 +64,9 @@ make quality
 
 A change should not be committed if any of these checks fail.
 
-## Planned Quality Improvements
+## Quality Tools
 
-The following tools are planned, but intentionally added step by step.
+The following tools are active. Future automation remains deferred until it reduces real project risk.
 
 ### Ruff
 Status: active.
