@@ -63,6 +63,20 @@
     border-color: var(--color-text-muted);
 }
 
+.button--primary:focus-visible,
+.button--secondary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.button--primary:active {
+    opacity: 0.85;
+}
+
+.button--secondary:active {
+    background: var(--color-border);
+}
+
 .section-heading {
     max-width: 42rem;
     margin-bottom: var(--space-8);
