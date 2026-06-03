@@ -78,7 +78,7 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 ## Sprint 8 - Accessibility and Semantic Hardening
 
 - Goal: Strengthen the repository-wide accessibility and semantic HTML baseline using a repeatable audit workflow before making targeted fixes.
-- Status: Active
+- Status: Completed
 - Scope summary: Repo-wide review of user-facing templates and shared CSS against the accessibility checklist, including page structure, headings and labels, link purpose, label/list semantics, keyboard focus, skip-link behavior, touch targets, reading order, color/contrast risks, and final manual verification.
 - GitHub milestone reference: `Sprint 8 - Accessibility and Semantic Hardening`
 
