@@ -83,8 +83,7 @@ class ProjectIndexViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Portfolio Platform")
         self.assertContains(response, "Professional portfolio website project.")
-        self.assertContains(response, "Python, Django")
-
+        self.assertContains(response, "View project details")
     def test_projects_index_renders_available_links(self) -> None:
         Project.objects.create(
             title="Public Project",

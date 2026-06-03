@@ -38,11 +38,6 @@
                             </h3>
                             <p>{{ project.summary }}</p>
 
-                            <p class="card__label">Project snapshot</p>
-                            <p><strong>Status:</strong> {{ project.get_status_display }}</p>
-                            <p><strong>Role:</strong> {{ project.role }}</p>
-                            <p><strong>Tech stack:</strong> {{ project.tech_stack }}</p>
-
                             {% if project.repository_url or project.live_url or project.documentation_url %}
                                 <p><strong>Evidence:</strong></p>
                                 <ul class="tag-list">
