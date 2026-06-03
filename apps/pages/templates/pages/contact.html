@@ -25,7 +25,7 @@
         <div class="card-grid">
             {% for method in contact_page.contact_methods %}
                 <article class="card">
-                    <h2>{{ method.title }}</h2>
+                    <h3>{{ method.title }}</h3>
                     <p>{{ method.description }}</p>
                     <a class="button button--secondary" href="{{ method.url }}">
                         {{ method.label }}

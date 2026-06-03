@@ -39,19 +39,19 @@
             <div class="card-grid">
                 <article class="card">
                     <p class="card__label">Role</p>
-                    <h2>Responsibility</h2>
+                    <h3>Responsibility</h3>
                     <p>{{ project.role }}</p>
                 </article>
 
                 <article class="card">
                     <p class="card__label">Technology</p>
-                    <h2>Tech stack</h2>
+                    <h3>Tech stack</h3>
                     <p>{{ project.tech_stack }}</p>
                 </article>
 
                 <article class="card">
                     <p class="card__label">Evidence</p>
-                    <h2>Supporting links</h2>
+                    <h3>Supporting links</h3>
 
                     {% if project.repository_url or project.live_url or project.documentation_url %}
                         <ul class="tag-list">
@@ -73,7 +73,7 @@
                 {% if project.problem_context %}
                     <article class="card">
                         <p class="card__label">Context</p>
-                        <h2>Problem context</h2>
+                        <h3>Problem context</h3>
                         <p>{{ project.problem_context }}</p>
                     </article>
                 {% endif %}
@@ -81,7 +81,7 @@
                 {% if project.technical_approach %}
                     <article class="card">
                         <p class="card__label">Implementation</p>
-                        <h2>Technical approach</h2>
+                        <h3>Technical approach</h3>
                         <p>{{ project.technical_approach }}</p>
                     </article>
                 {% endif %}

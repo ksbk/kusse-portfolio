@@ -36,7 +36,7 @@
         <div class="card-grid">
             {% for group in cv_page.skill_groups %}
                 <article class="card">
-                    <h2>{{ group.title }}</h2>
+                    <h3>{{ group.title }}</h3>
                     <ul class="tag-list" aria-label="{{ group.title }}">
                         {% for item in group.items %}
                             <li>{{ item }}</li>
@@ -58,7 +58,7 @@
         <div class="card-grid">
             {% for section in cv_page.sections %}
                 <article class="card">
-                    <h2>{{ section.title }}</h2>
+                    <h3>{{ section.title }}</h3>
                     <p>{{ section.description }}</p>
                 </article>
             {% endfor %}
