@@ -21,6 +21,11 @@
     text-decoration: none;
 }
 
+.site-brand:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .site-nav__list,
 .footer-nav__list {
     display: flex;
@@ -33,6 +38,10 @@
 
 .site-nav a,
 .footer-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: var(--space-2);
     color: var(--color-text-muted);
     text-decoration: none;
 }
