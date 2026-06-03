@@ -1,4 +1,4 @@
-"""URL routes for placeholder page scaffolding."""
+"""URL routes for static public portfolio pages."""
 
 from django.urls import path
 

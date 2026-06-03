@@ -13,7 +13,7 @@ The goal is to describe each project’s purpose, scope, technical approach, imp
 - Prefer technical clarity over self-promotion.
 - Keep the first version simple and extensible.
 - Separate structured project data from page-specific presentation.
-- Support both a project list page and future project detail pages.
+- Support both a structured project list page and structured project detail pages.
 
 ## Initial Fields
 
@@ -51,7 +51,7 @@ The first implementation should support:
 
 - A projects list page.
 - Project cards with title, summary, category, status, and key links.
-- A future detail page structure.
+- Project detail pages with role, stack, context, approach, and supporting links.
 - Admin-editable project entries.
 - Featured project selection.
 
@@ -77,13 +77,13 @@ The `pages` app should continue to handle simple static public pages.
 
 A dedicated `projects` app should handle structured project portfolio data, including models, admin configuration, list views, and detail views.
 
-## Future Implementation Issues
+## Current Implementation Status
 
-Recommended next issues:
+The implemented baseline includes:
 
-- `KP-3002 — Scaffold projects app`
-- `KP-3003 — Add initial Project model`
-- `KP-3004 — Configure projects admin`
-- `KP-3005 — Implement projects list view`
-- `KP-3006 — Implement project detail view`
-- `KP-3007 — Add project tests`
+- A dedicated `projects` app.
+- A structured `Project` model.
+- Django admin configuration for project records.
+- A routed project index page.
+- Routed project detail pages.
+- Tests for model behavior, index/detail pages, links, and seed command behavior.
