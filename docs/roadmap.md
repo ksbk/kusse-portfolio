@@ -77,15 +77,25 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 
 ## Sprint 8 - Accessibility and Semantic Hardening
 
-- Goal: Harden the site's accessibility baseline and semantic HTML quality based on the Sprint 8 audit findings.
+- Goal: Strengthen the repository-wide accessibility and semantic HTML baseline using a repeatable audit workflow before making targeted fixes.
 - Status: Active
-- Scope summary: Repeated link clarity, global focus fallback, evidence-list semantics, skip-link hiding robustness, nav and footer touch targets, and redundant project detail heading.
+- Scope summary: Repo-wide review of user-facing templates and shared CSS against the accessibility checklist, including page structure, headings and labels, link purpose, label/list semantics, keyboard focus, skip-link behavior, touch targets, reading order, color/contrast risks, and final manual verification.
 - GitHub milestone reference: `Sprint 8 - Accessibility and Semantic Hardening`
 
 ### Issue Plan
 
 - `KP-8001 - Improve project link clarity`
-- `KP-8002 - Improve project evidence-list semantics`
-- `KP-8003 - Harden skip link and nav touch targets`
-- `KP-8004 - Remove redundant project detail heading`
-- `KP-8005 - Final accessibility verification`
+  - Status: Completed
+  - Scope: Early specific fix for repeated project links and evidence-link accessible names.
+
+- `KP-8002 - Audit and improve label/list semantics across templates`
+  - Scope: Review visually labelled lists or grouped links across user-facing templates, identify gaps, and make the smallest approved semantic fixes.
+
+- `KP-8003 - Harden keyboard focus, skip link, and touch targets`
+  - Scope: Review shared focus behavior, skip-link behavior, primary/footer navigation targets, and mobile tap comfort.
+
+- `KP-8004 - Review heading hierarchy and redundant labels across templates`
+  - Scope: Review page headings, section headings, repeated eyebrow/heading text, and labels that do not add useful structure.
+
+- `KP-8005 - Final repo-wide accessibility verification`
+  - Scope: Run final manual and automated quality checks, including keyboard navigation, skip link, mobile width, 200% zoom, no horizontal overflow, and targeted regression tests where useful.
