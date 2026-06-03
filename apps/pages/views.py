@@ -30,16 +30,16 @@ class HomeView(TemplateView):
                 {
                     "title": _("Django portfolio platform"),
                     "description": _(
-                        "A professional portfolio system built with Django, structured "
-                        "documentation, typed settings, and a clean public development workflow."
+                        "A public portfolio project built with Django, structured "
+                        "documentation, typed settings, and a documented development workflow."
                     ),
                     "label": _("Full-stack web development"),
                 },
                 {
                     "title": _("Research and technical writing"),
                     "description": _(
-                        "Scientific and technical work shaped by research training, "
-                        "evidence-based reasoning, and careful explanation."
+                        "Research training and technical writing focused on "
+                        "evidence-based reasoning and careful explanation."
                     ),
                     "label": _("Research communication"),
                 },
@@ -102,7 +102,7 @@ class AboutView(TemplateView):
             "description": _(
                 "I am building a professional path across "
                 "software development, applied data work, research communication, and practical "
-                "tools for real-world problems."
+                "documented software projects and practical technical tools."
             ),
             "sections": [
                 {
@@ -117,7 +117,7 @@ class AboutView(TemplateView):
                     "title": _("Software direction"),
                     "description": _(
                         "I am focused on Python, Django, data-informed applications, full-stack web "
-                        "development, and research software that is clear, maintainable, and useful."
+                        "development, and research-oriented software that is clear and maintainable."
                     ),
                 },
                 {
@@ -149,8 +149,8 @@ class ResearchView(TemplateView):
                 {
                     "title": _("Scientific problem-solving"),
                     "description": _(
-                        "Experience across physics, computer science, and chemistry gives me a broad "
-                        "foundation for analyzing complex technical systems."
+                        "Academic background across physics, computer science, and chemistry "
+                        "gives me a broad foundation for analyzing complex technical systems."
                     ),
                 },
                 {

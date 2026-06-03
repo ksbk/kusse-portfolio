@@ -21,10 +21,9 @@ PROJECT_RECORDS: list[dict[str, Any]] = [
             "Python, TensorFlow/Keras, neural networks, computer vision"
         ),
         "problem_context": (
-            "Computer vision systems require reliable data preprocessing, model "
-            "design, training, validation, and performance evaluation. This "
-            "project focused on building and evaluating a practical image "
-            "classification workflow."
+            "This practice project focused on the core steps of image "
+            "classification: data preparation, model training, validation, and "
+            "evaluation."
         ),
         "technical_approach": (
             "Prepared image data, built and trained a neural network classifier, "
@@ -50,9 +49,8 @@ PROJECT_RECORDS: list[dict[str, Any]] = [
             "satisfaction"
         ),
         "problem_context": (
-            "Many intelligent systems rely on searching large state spaces, "
-            "reasoning under uncertainty, ranking information, or choosing "
-            "actions based on available evidence."
+            "These practice implementations explored search, uncertainty, "
+            "ranking, and decision-making techniques across focused AI problems."
         ),
         "technical_approach": (
             "Implemented graph search, adversarial search, propositional logic, "
@@ -78,9 +76,8 @@ PROJECT_RECORDS: list[dict[str, Any]] = [
             "optimization"
         ),
         "problem_context": (
-            "Reliable applications depend on well-designed data models, "
-            "normalized relationships, efficient queries, and maintainable "
-            "database structures."
+            "This database practice project focused on normalized relationships, "
+            "maintainable queries, views, and indexing concepts."
         ),
         "technical_approach": (
             "Designed relational schemas, wrote SQL queries, used joins and views "
@@ -108,9 +105,8 @@ PROJECT_RECORDS: list[dict[str, Any]] = [
             "Python, pytest, file I/O, regular expressions, OOP, CLI scripting"
         ),
         "problem_context": (
-            "Many practical software tasks require reliable scripts that parse "
-            "data, validate input, transform files, and automate repetitive "
-            "workflows."
+            "These small Python programs focused on parsing data, validating "
+            "input, transforming files, and automating repetitive workflows."
         ),
         "technical_approach": (
             "Implemented Python scripts and modules using functions, classes, file "
