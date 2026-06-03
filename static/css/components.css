@@ -141,6 +141,25 @@
     font-weight: 600;
 }
 
+.tag-list li a:hover {
+    color: var(--color-text);
+}
+
+.back-link {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--color-text);
+}
+
+.back-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .contact-cta__inner {
     display: flex;
     align-items: center;
