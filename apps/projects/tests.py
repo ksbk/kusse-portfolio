@@ -84,6 +84,7 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "Portfolio Platform")
         self.assertContains(response, "Professional portfolio website project.")
         self.assertContains(response, "View project details")
+
     def test_projects_index_renders_available_links(self) -> None:
         Project.objects.create(
             title="Public Project",
@@ -107,7 +108,26 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "https://github.com/example/project")
         self.assertContains(response, "https://example.com")
         self.assertContains(response, "https://docs.example.com")
+        self.assertContains(response, 'aria-label="Repository for Public Project"')
+        self.assertContains(response, 'aria-label="Live site for Public Project"')
+        self.assertContains(response, 'aria-label="Documentation for Public Project"')
 
+    def test_projects_index_detail_links_have_project_specific_labels(self) -> None:
+        project = Project.objects.create(
+            title="Linked Project",
+            slug="linked-project",
+            summary="Project shown on the index page.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("projects:detail", args=[project.slug]))
+        self.assertContains(response, 'aria-label="View details for Linked Project"')
 
 
 class ProjectDetailViewTests(TestCase):
@@ -136,6 +156,7 @@ class ProjectDetailViewTests(TestCase):
         self.assertContains(response, "A need for a structured professional portfolio.")
         self.assertContains(response, "Built with Django apps, templates, and tests.")
         self.assertContains(response, "Repository")
+        self.assertContains(response, 'aria-label="Repository for Portfolio Platform"')
 
     def test_project_detail_returns_404_for_missing_slug(self) -> None:
         response = self.client.get(reverse("projects:detail", args=["missing-project"]))
