@@ -49,6 +49,11 @@
     color: var(--color-text);
 }
 
+.site-nav a[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
 .site-main {
     min-height: 70vh;
 }
