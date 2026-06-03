@@ -60,7 +60,7 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 ## Sprint 7 - Navigation States, Visual Hierarchy, and Responsive Refinement
 
 - Goal: Improve frontend navigation clarity, visual hierarchy, responsive behavior, focus affordances, and final public-page review.
-- Status: Active
+- Status: Completed
 - Scope summary: Heading hierarchy, active navigation state, card grid responsiveness, project index density, accessible focus states, external link attributes, small navigation affordances, and final responsive review.
 - GitHub milestone reference: `Sprint 7 - Navigation States, Visual Hierarchy, and Responsive Refinement`
 
@@ -74,3 +74,18 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 - `KP-7006 - Add rel attributes to external links`
 - `KP-7007 - Improve small navigation and link affordances`
 - `KP-7008 - Final responsive frontend review`
+
+## Sprint 8 - Accessibility and Semantic Hardening
+
+- Goal: Harden the site's accessibility baseline and semantic HTML quality based on the Sprint 8 audit findings.
+- Status: Active
+- Scope summary: Repeated link clarity, global focus fallback, evidence-list semantics, skip-link hiding robustness, nav and footer touch targets, and redundant project detail heading.
+- GitHub milestone reference: `Sprint 8 - Accessibility and Semantic Hardening`
+
+### Issue Plan
+
+- `KP-8001 - Improve project link clarity`
+- `KP-8002 - Improve project evidence-list semantics`
+- `KP-8003 - Harden skip link and nav touch targets`
+- `KP-8004 - Remove redundant project detail heading`
+- `KP-8005 - Final accessibility verification`
