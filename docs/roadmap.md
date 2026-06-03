@@ -53,6 +53,24 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 ## Sprint 6 - Public Portfolio Content and Presentation
 
 - Goal: Improve public-facing portfolio content, evidence framing, presentation details, and reviewer handoff documentation.
-- Status: Active
+- Status: Completed
 - Scope summary: Roadmap status alignment, honest public copy review, project presentation refinements, stale placeholder cleanup, basic metadata improvements, and README refresh.
 - GitHub milestone reference: `Sprint 6 - Public Portfolio Content and Presentation`
+
+## Sprint 7 - Navigation States, Visual Hierarchy, and Responsive Refinement
+
+- Goal: Improve frontend navigation clarity, visual hierarchy, responsive behavior, focus affordances, and final public-page review.
+- Status: Active
+- Scope summary: Heading hierarchy, active navigation state, card grid responsiveness, project index density, accessible focus states, external link attributes, small navigation affordances, and final responsive review.
+- GitHub milestone reference: `Sprint 7 - Navigation States, Visual Hierarchy, and Responsive Refinement`
+
+### Issue Plan
+
+- `KP-7001 - Fix heading hierarchy in card interiors`
+- `KP-7002 - Add active navigation state`
+- `KP-7003 - Improve card grid responsiveness`
+- `KP-7004 - Reduce project index card density`
+- `KP-7005 - Add accessible focus and active states`
+- `KP-7006 - Add rel attributes to external links`
+- `KP-7007 - Improve small navigation and link affordances`
+- `KP-7008 - Final responsive frontend review`
