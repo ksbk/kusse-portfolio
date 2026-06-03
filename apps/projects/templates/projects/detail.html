@@ -31,6 +31,11 @@
 
     <section class="section section--surface">
         <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">Project details</p>
+                <h2>Project details</h2>
+            </div>
+
             <div class="card-grid">
                 <article class="card">
                     <p class="card__label">Role</p>
@@ -42,6 +47,27 @@
                     <p class="card__label">Technology</p>
                     <h2>Tech stack</h2>
                     <p>{{ project.tech_stack }}</p>
+                </article>
+
+                <article class="card">
+                    <p class="card__label">Evidence</p>
+                    <h2>Supporting links</h2>
+
+                    {% if project.repository_url or project.live_url or project.documentation_url %}
+                        <ul class="tag-list">
+                            {% if project.repository_url %}
+                                <li><a href="{{ project.repository_url }}">Repository</a></li>
+                            {% endif %}
+                            {% if project.live_url %}
+                                <li><a href="{{ project.live_url }}">Live site</a></li>
+                            {% endif %}
+                            {% if project.documentation_url %}
+                                <li><a href="{{ project.documentation_url }}">Documentation</a></li>
+                            {% endif %}
+                        </ul>
+                    {% else %}
+                        <p>Not currently linked.</p>
+                    {% endif %}
                 </article>
 
                 {% if project.problem_context %}
