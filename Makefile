@@ -1,4 +1,4 @@
-.PHONY: check typecheck test migrate seed quality runserver lint install-hooks
+.PHONY: check typecheck test migrate seed quality runserver lint install-hooks clean
 
 check:
 	uv run python manage.py check
@@ -25,3 +25,8 @@ lint:
 
 install-hooks:
 	uv run pre-commit install
+
+clean:
+	find . -type d -name __pycache__ -exec rm -rf {} +
+	find . -type f -name '*.pyc' -delete
+	rm -rf .mypy_cache .ruff_cache
