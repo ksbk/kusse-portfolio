@@ -160,6 +160,7 @@ class ProjectDetailViewTests(TestCase):
         self.assertContains(response, "Repository")
         self.assertContains(response, 'aria-label="Evidence links for Portfolio Platform"')
         self.assertContains(response, 'aria-label="Repository for Portfolio Platform"')
+        self.assertNotContains(response, '<p class="eyebrow">Project details</p>')
 
     def test_project_detail_returns_404_for_missing_slug(self) -> None:
         response = self.client.get(reverse("projects:detail", args=["missing-project"]))
