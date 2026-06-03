@@ -6,6 +6,71 @@ This workflow defines a repeatable manual audit process for reviewing user-facin
 
 Use this audit to compare current implementation patterns with expected best practices, identify concrete risks, and scope follow-up fixes without prematurely editing files.
 
+## Baseline Standards for Review
+
+Use these baseline standards to anchor manual review before proposing any fix.
+Treat these as practical quality checks, not automatic failure claims.
+
+### 1. Page structure
+
+- Review question:
+	Are core landmarks present and meaningful for page navigation?
+- Baseline expectation:
+	Pages should expose clear structure with landmarks such as header, nav, main, and footer where appropriate.
+	Landmark labels should help users distinguish multiple navigation regions.
+- Source:
+	W3C WAI "Page Structure" (Developing for Web Accessibility), WCAG 2.2 SC 1.3.1 Info and Relationships.
+
+### 2. Headings and labels
+
+- Review question:
+	Do headings and visible labels communicate hierarchy and purpose without redundancy?
+- Baseline expectation:
+	Each page should have one clear h1 and logical heading progression.
+	Labels for grouped content should be programmatically clear when needed.
+- Source:
+	W3C WAI "Headings" and "Labeling Controls" (Developing for Web Accessibility), WCAG 2.2 SC 1.3.1.
+
+### 3. Link purpose
+
+- Review question:
+	Can users understand link destination from text and context, especially when link text repeats?
+- Baseline expectation:
+	Repeated link text should remain understandable through surrounding context or programmatic naming.
+	Do not require `target="_blank"`; treat external-link behavior as a product decision.
+- Source:
+	W3C WAI "Link Text" (Developing for Web Accessibility), WCAG 2.2 SC 2.4.4 Link Purpose (In Context).
+
+### 4. Touch targets
+
+- Review question:
+	Are interactive elements usable on mobile without precision tapping?
+- Baseline expectation:
+	Tap/click targets in primary UI areas should be comfortably usable at narrow widths.
+	Flag undersized targets as risk when interaction appears difficult.
+- Source:
+	WCAG 2.2 SC 2.5.8 Target Size (Minimum), W3C WAI mobile and pointer guidance.
+
+### 5. Reading order
+
+- Review question:
+	Does keyboard and assistive-tech reading order follow the intended visual/logical sequence?
+- Baseline expectation:
+	DOM order should preserve logical reading flow.
+	Skip link and focus movement should support efficient navigation to main content.
+- Source:
+	W3C WAI "Keyboard Access" (Developing for Web Accessibility), WCAG 2.2 SC 1.3.2 Meaningful Sequence and SC 2.4.3 Focus Order.
+
+### 6. Color and contrast
+
+- Review question:
+	Are text and focus indicators perceivable without relying on color alone?
+- Baseline expectation:
+	Text, muted text, and focus indicators should remain sufficiently visible.
+	Custom focus styling is optional if browser-default focus remains clearly visible and not suppressed.
+- Source:
+	W3C WAI "Color Contrast" and "Focus" guidance, WCAG 2.2 SC 1.4.3 Contrast (Minimum), SC 1.4.11 Non-text Contrast, and SC 2.4.7 Focus Visible.
+
 ## When to use this audit
 
 Run this audit:
