@@ -33,6 +33,7 @@ staticfiles/
 htmlcov/
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
 
 # ==========================================
 # Frontend & Node Ecosystem
@@ -45,3 +46,4 @@ dist/
 # IDE & Editor Configurations
 # ==========================================
 .vscode/
+.trunk/
