@@ -47,13 +47,13 @@
                                 <p><strong>Evidence:</strong></p>
                                 <ul class="tag-list">
                                     {% if project.repository_url %}
-                                        <li><a href="{{ project.repository_url }}">Repository</a></li>
+                                        <li><a href="{{ project.repository_url }}" rel="noopener noreferrer">Repository</a></li>
                                     {% endif %}
                                     {% if project.live_url %}
-                                        <li><a href="{{ project.live_url }}">Live site</a></li>
+                                        <li><a href="{{ project.live_url }}" rel="noopener noreferrer">Live site</a></li>
                                     {% endif %}
                                     {% if project.documentation_url %}
-                                        <li><a href="{{ project.documentation_url }}">Documentation</a></li>
+                                        <li><a href="{{ project.documentation_url }}" rel="noopener noreferrer">Documentation</a></li>
                                     {% endif %}
                                 </ul>
                             {% else %}

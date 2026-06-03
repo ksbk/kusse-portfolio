@@ -47,10 +47,10 @@
                 <nav class="footer-nav" aria-label="Footer navigation">
                     <ul class="footer-nav__list">
                         {% if site.social_links.github %}
-                            <li><a href="{{ site.social_links.github }}">GitHub</a></li>
+                            <li><a href="{{ site.social_links.github }}" rel="noopener noreferrer">GitHub</a></li>
                         {% endif %}
                         {% if site.social_links.linkedin %}
-                            <li><a href="{{ site.social_links.linkedin }}">LinkedIn</a></li>
+                            <li><a href="{{ site.social_links.linkedin }}" rel="noopener noreferrer">LinkedIn</a></li>
                         {% endif %}
                         <li><a href="{% url 'pages:contact' %}">Contact</a></li>
                     </ul>
