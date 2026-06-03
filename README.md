@@ -20,6 +20,10 @@ The project presents selected work across research, software development, AI, da
 
 Active development.
 
+Current milestone: Sprint 6 public portfolio content and presentation.
+
+Sprint 5 quality automation is active.
+
 See:
 
 - [Roadmap](docs/roadmap.md)
@@ -81,6 +85,8 @@ http://127.0.0.1:8000/
 
 ## Quality Checks
 
+`make quality` is the current required local gate before committing feature, content, or template changes.
+
 ```bash
 uv run python manage.py check
 uv run mypy config apps
@@ -99,6 +105,14 @@ Run linting alone with:
 ```bash
 make lint
 ```
+
+## Automation
+
+GitHub Actions CI runs `make quality` on pushes and pull requests to `main`.
+
+Pre-commit hooks are active and currently run Ruff.
+
+Ruff linting is conservative, available through `make lint`, and included in `make quality`.
 
 ## Project Structure
 
@@ -127,4 +141,4 @@ docs/          Project planning, requirements, architecture, and decisions
 
 Project records can be edited through Django admin. The `seed_projects` command recreates the initial project records in a new database or development environment.
 
-Additional automation, deployment documentation, and public evidence links may be added in later milestones.
+Deployment documentation and public evidence links may be added in later milestones. Do not claim deployment or live-site status unless deployment is configured and verified.
