@@ -39,8 +39,8 @@
                             <p>{{ project.summary }}</p>
 
                             {% if project.repository_url or project.live_url or project.documentation_url %}
-                                <p><strong>Evidence:</strong></p>
-                                <ul class="tag-list">
+                                <p class="card__label" id="project-{{ project.slug }}-evidence-label">Evidence</p>
+                                <ul class="tag-list" aria-labelledby="project-{{ project.slug }}-evidence-label">
                                     {% if project.repository_url %}
                                         <li><a href="{{ project.repository_url }}" rel="noopener noreferrer" aria-label="Repository for {{ project.title }}">Repository</a></li>
                                     {% endif %}

@@ -108,6 +108,8 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "https://github.com/example/project")
         self.assertContains(response, "https://example.com")
         self.assertContains(response, "https://docs.example.com")
+        self.assertContains(response, 'id="project-public-project-evidence-label"')
+        self.assertContains(response, 'aria-labelledby="project-public-project-evidence-label"')
         self.assertContains(response, 'aria-label="Repository for Public Project"')
         self.assertContains(response, 'aria-label="Live site for Public Project"')
         self.assertContains(response, 'aria-label="Documentation for Public Project"')
@@ -156,6 +158,7 @@ class ProjectDetailViewTests(TestCase):
         self.assertContains(response, "A need for a structured professional portfolio.")
         self.assertContains(response, "Built with Django apps, templates, and tests.")
         self.assertContains(response, "Repository")
+        self.assertContains(response, 'aria-label="Evidence links for Portfolio Platform"')
         self.assertContains(response, 'aria-label="Repository for Portfolio Platform"')
 
     def test_project_detail_returns_404_for_missing_slug(self) -> None:

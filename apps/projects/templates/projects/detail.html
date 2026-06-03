@@ -13,7 +13,7 @@
                 <p class="lead">{{ project.summary }}</p>
 
                 {% if project.repository_url or project.live_url or project.documentation_url %}
-                    <ul class="tag-list">
+                    <ul class="tag-list" aria-label="Evidence links for {{ project.title }}">
                         {% if project.repository_url %}
                             <li><a href="{{ project.repository_url }}" rel="noopener noreferrer" aria-label="Repository for {{ project.title }}">Repository</a></li>
                         {% endif %}
