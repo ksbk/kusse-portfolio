@@ -1,0 +1,16 @@
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+.split-layout > .lead {
+    margin-top: var(--space-6);
+}
+
+@media (min-width: 56.0625rem) {
+    .split-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.8fr);
+    }
+}

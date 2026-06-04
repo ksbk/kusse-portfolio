@@ -1,0 +1,20 @@
+.hero {
+    border-bottom: 1px solid var(--color-border);
+    background:
+        linear-gradient(135deg, rgb(219 238 230 / 82%), rgb(253 251 246 / 0%) 36rem),
+        var(--color-surface-muted);
+}
+
+.hero__inner {
+    padding-block: 2.5rem;
+}
+
+.hero__content {
+    max-width: 52rem;
+}
+
+@media (min-width: 48rem) {
+    .hero__inner {
+        padding-block: var(--space-16);
+    }
+}

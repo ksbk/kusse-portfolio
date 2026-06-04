@@ -1,0 +1,26 @@
+.eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 42rem;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lead);
+    line-height: 1.72;
+    overflow-wrap: anywhere;
+}
+
+.section-heading {
+    max-width: 42rem;
+    margin-bottom: var(--space-8);
+}
+
+.section-heading p:not(.eyebrow) {
+    color: var(--color-text-muted);
+}

@@ -1,0 +1,36 @@
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    background: var(--color-surface);
+    box-shadow: 0 0.35rem 1.5rem rgb(23 32 27 / 5%);
+}
+
+.card h2,
+.card h3 {
+    max-width: none;
+}
+
+.card a:not(.button) {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+}
+
+.card a:not(.button):hover {
+    color: var(--color-primary-hover);
+    text-decoration-thickness: 2px;
+}
+
+.card a:not(.button):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.card__label {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+}
