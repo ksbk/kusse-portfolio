@@ -1,6 +1,7 @@
 from io import StringIO
 from typing import cast
 
+from django.conf import settings
 from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
@@ -57,6 +58,42 @@ class ProjectModelTests(TestCase):
     def test_slug_field_is_unique(self) -> None:
         slug_field = Project._meta.get_field("slug")
         self.assertTrue(getattr(slug_field, "unique", False))
+
+    def test_image_fields_are_optional(self) -> None:
+        project = Project.objects.create(
+            title="Visual Optional Project",
+            slug="visual-optional-project",
+            summary="Project without visual evidence.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.ACTIVE,
+            role="Developer",
+            tech_stack="Python, Django",
+        )
+
+        self.assertFalse(project.image)
+        self.assertEqual(project.image_alt_text, "")
+
+    def test_image_alt_uses_custom_text_when_available(self) -> None:
+        project = Project(
+            title="Portfolio Platform",
+            image_alt_text="Portfolio dashboard screenshot showing project cards.",
+        )
+
+        self.assertEqual(
+            project.image_alt,
+            "Portfolio dashboard screenshot showing project cards.",
+        )
+
+    def test_image_alt_falls_back_to_project_title(self) -> None:
+        project = Project(title="Portfolio Platform")
+
+        self.assertEqual(project.image_alt, "Visual evidence for Portfolio Platform")
+
+
+class ProjectMediaConfigTests(TestCase):
+    def test_local_media_settings_are_configured(self) -> None:
+        self.assertEqual(settings.MEDIA_URL, "/media/")
+        self.assertEqual(settings.MEDIA_ROOT, settings.BASE_DIR / "media")
 
 
 class ProjectIndexViewTests(TestCase):
@@ -182,6 +219,7 @@ class ProjectDetailViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, reverse("projects:detail", args=[project.slug]))
+
 
 class SeedProjectsCommandTests(TestCase):
     def test_seed_projects_creates_initial_project_records(self) -> None:

@@ -31,10 +31,20 @@ class Project(models.Model):
     repository_url = models.URLField(blank=True)
     live_url = models.URLField(blank=True)
     documentation_url = models.URLField(blank=True)
+    image = models.ImageField(blank=True, upload_to="projects/visual-evidence/")
+    image_alt_text = models.CharField(
+        blank=True,
+        max_length=255,
+        help_text="Describe the project image for accessibility.",
+    )
     featured = models.BooleanField(default=False)
     display_order = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def image_alt(self) -> str:
+        return self.image_alt_text or f"Visual evidence for {self.title}"
 
     class Meta:
         ordering = ["display_order", "title"]
