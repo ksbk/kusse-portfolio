@@ -2,6 +2,7 @@
 
 from typing import Any
 
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 
@@ -13,6 +14,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        projects_url = reverse("projects:index")
+        research_url = reverse("pages:research")
         context["homepage"] = {
             "eyebrow": _("Software developer with a research background"),
             "title": _(
@@ -34,6 +37,8 @@ class HomeView(TemplateView):
                         "documentation, typed settings, and a documented development workflow."
                     ),
                     "label": _("Full-stack web development"),
+                    "action_label": _("View project portfolio"),
+                    "action_url": projects_url,
                 },
                 {
                     "title": _("Research and technical writing"),
@@ -42,6 +47,8 @@ class HomeView(TemplateView):
                         "evidence-based reasoning and careful explanation."
                     ),
                     "label": _("Research communication"),
+                    "action_label": _("View research profile"),
+                    "action_url": research_url,
                 },
                 {
                     "title": _("Applied Python and data projects"),
@@ -50,6 +57,8 @@ class HomeView(TemplateView):
                         "and applied AI concepts."
                     ),
                     "label": _("Python and data"),
+                    "action_label": _("See more project details"),
+                    "action_url": projects_url,
                 },
             ],
             "identity_points": [

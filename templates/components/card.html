@@ -1,0 +1,10 @@
+<article class="card">
+    {% if item.label %}
+        <p class="card__label">{{ item.label }}</p>
+    {% endif %}
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+    {% if item.action_url and item.action_label %}
+        <a href="{{ item.action_url }}">{{ item.action_label }}</a>
+    {% endif %}
+</article>

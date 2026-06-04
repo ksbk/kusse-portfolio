@@ -13,7 +13,7 @@
             <p class="lead">{{ homepage.description }}</p>
 
             <div class="button-group">
-                <a class="button button--primary" href="#featured-work">
+                <a class="button button--primary" href="{% url 'projects:index' %}">
                     {{ homepage.primary_cta }}
                 </a>
                 <a class="button button--secondary" href="#contact">
@@ -26,18 +26,11 @@
 
 <section class="section" id="featured-work">
     <div class="container">
-        <div class="section-heading">
-            <p class="eyebrow">Selected work</p>
-            <h2>Selected work across software, data, and research practice.</h2>
-        </div>
+        {% include "components/section_heading.html" with eyebrow="Selected work" title="Selected work across software, data, and research practice." %}
 
         <div class="card-grid">
             {% for item in homepage.featured_work %}
-                <article class="card">
-                    <p class="card__label">{{ item.label }}</p>
-                    <h3>{{ item.title }}</h3>
-                    <p>{{ item.description }}</p>
-                </article>
+                {% include "components/card.html" with item=item %}
             {% endfor %}
         </div>
     </div>
@@ -60,10 +53,7 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-heading">
-            <p class="eyebrow">Core skills</p>
-            <h2>Tools and capabilities I am actively building around.</h2>
-        </div>
+        {% include "components/section_heading.html" with eyebrow="Core skills" title="Tools and capabilities I am actively building around." %}
 
         <ul class="tag-list" aria-label="Core skills">
             {% for skill in homepage.skills %}
@@ -75,17 +65,11 @@
 
 <section class="section section--surface">
     <div class="container">
-        <div class="section-heading">
-            <p class="eyebrow">Ways to engage</p>
-            <h2>Clear paths for reviewing my work and starting a conversation.</h2>
-        </div>
+        {% include "components/section_heading.html" with eyebrow="Ways to engage" title="Clear paths for reviewing my work and starting a conversation." %}
 
         <div class="card-grid">
             {% for option in homepage.engagement_options %}
-                <article class="card">
-                    <h3>{{ option.title }}</h3>
-                    <p>{{ option.description }}</p>
-                </article>
+                {% include "components/card.html" with item=option %}
             {% endfor %}
         </div>
     </div>
