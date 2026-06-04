@@ -99,3 +99,34 @@ This roadmap is a high-level planning document. Detailed actionable tasks are tr
 
 - `KP-8005 - Final repo-wide accessibility verification`
   - Scope: Run final manual and automated quality checks, including keyboard navigation, skip link, mobile width, 200% zoom, no horizontal overflow, and targeted regression tests where useful.
+
+## Sprint 9 - Project Visual Evidence and Portfolio Credibility
+
+- Goal: Improve the credibility, clarity, and visual evidence of project entries without redesigning the whole portfolio.
+- Status: Planned
+- Scope summary: Add optional project screenshots or representative images, improve project proof points, review the balance of project index/detail pages after visual evidence is introduced, and complete a final portfolio credibility review.
+- GitHub milestone reference: `Sprint 9 - Project Visual Evidence and Portfolio Credibility`
+
+### Issue Plan
+
+- `KP-9001 - Add project screenshots and visual evidence`
+  - Scope: Add optional visual evidence for project entries while preserving clean rendering for projects without images.
+
+- `KP-9002 - Improve project content quality and proof points`
+  - Scope: Review project summaries, roles, tech stacks, evidence links, and proof-oriented wording so each project feels credible and specific.
+
+- `KP-9003 - Review project card/detail visual balance after images`
+  - Scope: Review spacing, image placement, card density, and detail-page readability after screenshots are introduced.
+
+- `KP-9004 - Final portfolio credibility review`
+  - Scope: Review the complete project section from a reviewer/client perspective and document any remaining follow-up work.
+
+### Out of Scope
+
+- No full site redesign.
+- No gallery or multi-image system.
+- No Cloudinary/R2/CDN integration unless separately approved.
+- No image optimization pipeline beyond basic responsive handling.
+- No new unrelated apps or sections.
+- No SEO/performance/security sprint expansion.
+- No rewriting the whole portfolio narrative.
