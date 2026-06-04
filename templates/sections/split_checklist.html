@@ -1,0 +1,16 @@
+{% if section.items %}
+    <section class="section{% if section.surface %} section--surface{% endif %}"{% if section.id %} id="{{ section.id }}"{% endif %}>
+        <div class="container split-layout">
+            <div>
+                <p class="eyebrow">{{ section.eyebrow }}</p>
+                <h2>{{ section.title }}</h2>
+            </div>
+
+            <ul class="check-list">
+                {% for item in section.items %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}

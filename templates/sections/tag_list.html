@@ -1,0 +1,13 @@
+{% if section.items %}
+    <section class="section{% if section.surface %} section--surface{% endif %}"{% if section.id %} id="{{ section.id }}"{% endif %}>
+        <div class="container">
+            {% include "components/section_heading.html" with eyebrow=section.eyebrow title=section.title %}
+
+            <ul class="tag-list" aria-label="{{ section.aria_label }}">
+                {% for item in section.items %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}

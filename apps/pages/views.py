@@ -16,85 +16,143 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         projects_url = reverse("projects:index")
         research_url = reverse("pages:research")
+        contact_url = reverse("pages:contact")
+
+        featured_work = [
+            {
+                "title": _("Django portfolio platform"),
+                "description": _(
+                    "A public portfolio project built with Django, structured "
+                    "documentation, typed settings, and a documented development workflow."
+                ),
+                "label": _("Full-stack web development"),
+                "action_label": _("View project portfolio"),
+                "action_url": projects_url,
+            },
+            {
+                "title": _("Research and technical writing"),
+                "description": _(
+                    "Research training and technical writing focused on "
+                    "evidence-based reasoning and careful explanation."
+                ),
+                "label": _("Research communication"),
+                "action_label": _("View research profile"),
+                "action_url": research_url,
+            },
+            {
+                "title": _("Applied Python and data projects"),
+                "description": _(
+                    "Practical software experiments using Python, automation, data handling, "
+                    "and applied AI concepts."
+                ),
+                "label": _("Python and data"),
+                "action_label": _("See more project details"),
+                "action_url": projects_url,
+            },
+        ]
+        identity_points = [
+            _("Research background in science and computational problem-solving."),
+            _("Software development focused on clarity, maintainability, and practical use."),
+            _("Interest in applied AI, healthcare technology, and research software."),
+        ]
+        skills = [
+            _("Python"),
+            _("Django"),
+            _("HTML"),
+            _("CSS"),
+            _("JavaScript"),
+            _("SQL"),
+            _("Data analysis"),
+            _("Technical writing"),
+        ]
+        engagement_options = [
+            {
+                "title": _("Review my work"),
+                "description": _("Explore selected projects, code, documentation, and development decisions."),
+            },
+            {
+                "title": _("Understand my background"),
+                "description": _("Read about my research training, technical direction, and professional story."),
+            },
+            {
+                "title": _("Start a conversation"),
+                "description": _("Contact me about research software, web development, or applied technical work."),
+            },
+        ]
+
         context["homepage"] = {
-            "eyebrow": _("Software developer with a research background"),
-            "title": _(
-                "I build software with attention to clarity, evidence, "
-                "and real-world constraints."
-            ),
             "description": _(
                 "This portfolio brings together my work across Python, data, "
                 "applied AI, Django, full-stack web development, research software, "
                 "and technical writing."
             ),
-            "primary_cta": _("View selected work"),
-            "secondary_cta": _("Contact me"),
-            "featured_work": [
+            "hero": {
+                "template": "sections/hero.html",
+                "eyebrow": _("Software developer with a research background"),
+                "title": _(
+                    "I build software with attention to clarity, evidence, "
+                    "and real-world constraints."
+                ),
+                "description": _(
+                    "This portfolio brings together my work across Python, data, "
+                    "applied AI, Django, full-stack web development, research software, "
+                    "and technical writing."
+                ),
+                "actions": [
+                    {
+                        "label": _("View selected work"),
+                        "url": projects_url,
+                        "class": "button button--primary",
+                    },
+                    {
+                        "label": _("Contact me"),
+                        "url": "#contact",
+                        "class": "button button--secondary",
+                    },
+                ],
+            },
+            "sections": [
                 {
-                    "title": _("Django portfolio platform"),
-                    "description": _(
-                        "A public portfolio project built with Django, structured "
-                        "documentation, typed settings, and a documented development workflow."
-                    ),
-                    "label": _("Full-stack web development"),
-                    "action_label": _("View project portfolio"),
-                    "action_url": projects_url,
+                    "template": "sections/card_grid.html",
+                    "id": "featured-work",
+                    "eyebrow": _("Selected work"),
+                    "title": _("Selected work across software, data, and research practice."),
+                    "items": featured_work,
                 },
                 {
-                    "title": _("Research and technical writing"),
-                    "description": _(
-                        "Research training and technical writing focused on "
-                        "evidence-based reasoning and careful explanation."
-                    ),
-                    "label": _("Research communication"),
-                    "action_label": _("View research profile"),
-                    "action_url": research_url,
+                    "template": "sections/split_checklist.html",
+                    "surface": True,
+                    "eyebrow": _("Research + software identity"),
+                    "title": _("A technical profile shaped by research discipline and practical delivery."),
+                    "items": identity_points,
                 },
                 {
-                    "title": _("Applied Python and data projects"),
-                    "description": _(
-                        "Practical software experiments using Python, automation, data handling, "
-                        "and applied AI concepts."
-                    ),
-                    "label": _("Python and data"),
-                    "action_label": _("See more project details"),
-                    "action_url": projects_url,
-                },
-            ],
-            "identity_points": [
-                _("Research background in science and computational problem-solving."),
-                _("Software development focused on clarity, maintainability, and practical use."),
-                _("Interest in applied AI, healthcare technology, and research software."),
-            ],
-            "skills": [
-                _("Python"),
-                _("Django"),
-                _("HTML"),
-                _("CSS"),
-                _("JavaScript"),
-                _("SQL"),
-                _("Data analysis"),
-                _("Technical writing"),
-            ],
-            "engagement_options": [
-                {
-                    "title": _("Review my work"),
-                    "description": _("Explore selected projects, code, documentation, and development decisions."),
+                    "template": "sections/tag_list.html",
+                    "eyebrow": _("Core skills"),
+                    "title": _("Tools and capabilities I am actively building around."),
+                    "aria_label": _("Core skills"),
+                    "items": skills,
                 },
                 {
-                    "title": _("Understand my background"),
-                    "description": _("Read about my research training, technical direction, and professional story."),
-                },
-                {
-                    "title": _("Start a conversation"),
-                    "description": _("Contact me about research software, web development, or applied technical work."),
+                    "template": "sections/card_grid.html",
+                    "surface": True,
+                    "eyebrow": _("Ways to engage"),
+                    "title": _("Clear paths for reviewing my work and starting a conversation."),
+                    "items": engagement_options,
                 },
             ],
-            "contact_title": _("Interested in working together?"),
-            "contact_description": _(
-                "I am open to conversations around research software, Django development, "
-                "technical documentation, and practical software projects."
-            ),
+            "contact_cta": {
+                "template": "sections/contact_cta.html",
+                "id": "contact",
+                "eyebrow": _("Contact"),
+                "title": _("Interested in working together?"),
+                "description": _(
+                    "I am open to conversations around research software, Django development, "
+                    "technical documentation, and practical software projects."
+                ),
+                "action_label": _("Contact me"),
+                "action_url": contact_url,
+            },
         }
         return context
 

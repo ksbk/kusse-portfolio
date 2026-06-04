@@ -1,0 +1,19 @@
+<section class="section hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <p class="eyebrow">{{ hero.eyebrow }}</p>
+            <h1>{{ hero.title }}</h1>
+            <p class="lead">{{ hero.description }}</p>
+
+            {% if hero.actions %}
+                <div class="button-group">
+                    {% for action in hero.actions %}
+                        <a class="{{ action.class }}" href="{{ action.url }}">
+                            {{ action.label }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

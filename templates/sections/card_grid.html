@@ -1,0 +1,13 @@
+{% if section.items %}
+    <section class="section{% if section.surface %} section--surface{% endif %}"{% if section.id %} id="{{ section.id }}"{% endif %}>
+        <div class="container">
+            {% include "components/section_heading.html" with eyebrow=section.eyebrow title=section.title %}
+
+            <div class="card-grid">
+                {% for item in section.items %}
+                    {% include "components/card.html" with item=item %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

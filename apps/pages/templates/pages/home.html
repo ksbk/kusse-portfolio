@@ -5,87 +5,11 @@
 {% block meta_description %}{{ homepage.description }}{% endblock %}
 
 {% block content %}
-<section class="section hero">
-    <div class="container hero__inner">
-        <div class="hero__content">
-            <p class="eyebrow">{{ homepage.eyebrow }}</p>
-            <h1>{{ homepage.title }}</h1>
-            <p class="lead">{{ homepage.description }}</p>
+{% include homepage.hero.template with hero=homepage.hero %}
 
-            <div class="button-group">
-                <a class="button button--primary" href="{% url 'projects:index' %}">
-                    {{ homepage.primary_cta }}
-                </a>
-                <a class="button button--secondary" href="#contact">
-                    {{ homepage.secondary_cta }}
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+{% for section in homepage.sections %}
+    {% include section.template with section=section %}
+{% endfor %}
 
-<section class="section" id="featured-work">
-    <div class="container">
-        {% include "components/section_heading.html" with eyebrow="Selected work" title="Selected work across software, data, and research practice." %}
-
-        <div class="card-grid">
-            {% for item in homepage.featured_work %}
-                {% include "components/card.html" with item=item %}
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="section section--surface">
-    <div class="container split-layout">
-        <div>
-            <p class="eyebrow">Research + software identity</p>
-            <h2>A technical profile shaped by research discipline and practical delivery.</h2>
-        </div>
-
-        <ul class="check-list">
-            {% for point in homepage.identity_points %}
-                <li>{{ point }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        {% include "components/section_heading.html" with eyebrow="Core skills" title="Tools and capabilities I am actively building around." %}
-
-        <ul class="tag-list" aria-label="Core skills">
-            {% for skill in homepage.skills %}
-                <li>{{ skill }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</section>
-
-<section class="section section--surface">
-    <div class="container">
-        {% include "components/section_heading.html" with eyebrow="Ways to engage" title="Clear paths for reviewing my work and starting a conversation." %}
-
-        <div class="card-grid">
-            {% for option in homepage.engagement_options %}
-                {% include "components/card.html" with item=option %}
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="section contact-cta" id="contact">
-    <div class="container contact-cta__inner">
-        <div>
-            <p class="eyebrow">Contact</p>
-            <h2>{{ homepage.contact_title }}</h2>
-            <p>{{ homepage.contact_description }}</p>
-        </div>
-
-        <a class="button button--primary" href="{% url 'pages:contact' %}">
-            Contact me
-        </a>
-    </div>
-</section>
+{% include homepage.contact_cta.template with contact_cta=homepage.contact_cta %}
 {% endblock %}
