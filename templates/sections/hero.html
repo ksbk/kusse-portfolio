@@ -1,18 +1,38 @@
 <section class="section hero">
     <div class="container hero__inner">
         <div class="hero__content">
-            <p class="eyebrow">{{ hero.eyebrow }}</p>
-            <h1>{{ hero.title }}</h1>
-            <p class="lead">{{ hero.description }}</p>
+            {% if hero.eyebrow %}
+                <p class="eyebrow hero__eyebrow">{{ hero.eyebrow }}</p>
+            {% endif %}
 
-            {% if hero.actions %}
-                <div class="button-group">
-                    {% for action in hero.actions %}
-                        <a class="{{ action.class }}" href="{{ action.url }}">
-                            {{ action.label }}
+            <h1 class="hero__title">{{ hero.title }}</h1>
+
+            {% if hero.description %}
+                <p class="lead hero__lead">{{ hero.description }}</p>
+            {% endif %}
+
+            {% if hero.has_actions %}
+                <div class="button-group hero__actions" role="group" aria-label="Homepage actions">
+                    {% if hero.primary_action.url and hero.primary_action.label %}
+                        <a class="button button--primary" href="{{ hero.primary_action.url }}">
+                            {{ hero.primary_action.label }}
                         </a>
-                    {% endfor %}
+                    {% endif %}
+
+                    {% if hero.secondary_action.url and hero.secondary_action.label %}
+                        <a class="button button--secondary" href="{{ hero.secondary_action.url }}">
+                            {{ hero.secondary_action.label }}
+                        </a>
+                    {% endif %}
                 </div>
+            {% endif %}
+
+            {% if hero.proof_points %}
+                <ul class="hero__proof-list" aria-label="Profile highlights">
+                    {% for point in hero.proof_points %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         </div>
     </div>

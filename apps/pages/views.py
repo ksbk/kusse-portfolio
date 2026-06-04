@@ -17,6 +17,7 @@ class HomeView(TemplateView):
         projects_url = reverse("projects:index")
         research_url = reverse("pages:research")
         contact_url = reverse("pages:contact")
+        about_url = reverse("pages:about")
 
         featured_work = [
             {
@@ -79,6 +80,14 @@ class HomeView(TemplateView):
                 "description": _("Contact me about research software, web development, or applied technical work."),
             },
         ]
+        hero_primary_action = {
+            "label": _("View selected work"),
+            "url": projects_url,
+        }
+        hero_secondary_action = {
+            "label": _("Read my background"),
+            "url": about_url,
+        }
 
         context["homepage"] = {
             "description": _(
@@ -88,27 +97,27 @@ class HomeView(TemplateView):
             ),
             "hero": {
                 "template": "sections/hero.html",
-                "eyebrow": _("Software developer with a research background"),
+                "eyebrow": _("Research-informed software development"),
                 "title": _(
-                    "I build software with attention to clarity, evidence, "
-                    "and real-world constraints."
+                    "I build clear, maintainable software shaped by research discipline."
                 ),
                 "description": _(
-                    "This portfolio brings together my work across Python, data, "
-                    "applied AI, Django, full-stack web development, research software, "
-                    "and technical writing."
+                    "I work across Django, Python, data workflows, and technical writing, "
+                    "with an emphasis on practical systems, careful documentation, and "
+                    "evidence-aware delivery."
                 ),
-                "actions": [
-                    {
-                        "label": _("View selected work"),
-                        "url": projects_url,
-                        "class": "button button--primary",
-                    },
-                    {
-                        "label": _("Contact me"),
-                        "url": "#contact",
-                        "class": "button button--secondary",
-                    },
+                "primary_action": hero_primary_action,
+                "secondary_action": hero_secondary_action,
+                "has_actions": bool(
+                    hero_primary_action["url"]
+                    and hero_primary_action["label"]
+                    or hero_secondary_action["url"]
+                    and hero_secondary_action["label"]
+                ),
+                "proof_points": [
+                    _("PhD-trained researcher"),
+                    _("Django/Python developer"),
+                    _("Research, data, and web systems"),
                 ],
             },
             "sections": [
