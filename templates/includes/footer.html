@@ -53,14 +53,7 @@
                     {% endif %}
                     {% for item in footer_nav.connect %}
                         <li>
-                            <a class="footer-nav__icon-link" href="{{ item.url }}"{% if item.is_active %} aria-current="page"{% endif %}>
-                                <span class="footer-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 24 24" focusable="false">
-                                        <path d="M4.75 6.5h14.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-8.5c0-.69.56-1.25 1.25-1.25Zm.77 1.5L12 12.66 18.48 8H5.52Zm13.48 1.36-6.56 4.72a.75.75 0 0 1-.88 0L5 9.36V16h14V9.36Z"></path>
-                                    </svg>
-                                </span>
-                                <span>{{ item.label }}</span>
-                            </a>
+                            <a href="{{ item.url }}"{% if item.is_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -70,19 +63,18 @@
                 <h3 id="footer-updates-heading" class="site-footer__heading">{{ footer.updates_heading }}</h3>
                 <p>{{ footer.updates_text }}</p>
                 <p class="site-footer__status">
-                    <span aria-hidden="true"></span>
+                    <span class="site-footer__status-dot" aria-hidden="true"></span>
                     {{ footer.availability_text }}
                 </p>
-                <a class="site-footer__cta" href="{{ contact_url }}">Contact</a>
             </section>
+        </div>
 
-            <div class="site-footer__bottom">
-                <p>&copy; {% now "Y" %} {{ site.name }}</p>
+        <div class="site-footer__bottom">
+            <p>&copy; {% now "Y" %} {{ site.name }}</p>
 
-                <a href="#main-content" class="site-footer__top-link" aria-label="Back to top">
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+            <a href="#main-content" class="site-footer__top-link" aria-label="Back to top">
+                <span aria-hidden="true">↑</span>
+            </a>
         </div>
     </div>
 </footer>
