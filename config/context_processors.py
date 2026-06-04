@@ -3,9 +3,11 @@ from typing import Any
 from django.conf import settings
 from django.http import HttpRequest
 
+from apps.pages.navigation import get_navigation
+
 
 def site_metadata(request: HttpRequest) -> dict[str, Any]:
-    return {
+    context: dict[str, Any] = {
         "site": {
             "name": getattr(settings, "SITE_NAME", "Kusse Sukuta Bersha"),
             "description": getattr(
@@ -19,3 +21,6 @@ def site_metadata(request: HttpRequest) -> dict[str, Any]:
             },
         },
     }
+
+    context.update(get_navigation(request))
+    return context
