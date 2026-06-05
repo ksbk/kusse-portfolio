@@ -5,13 +5,27 @@
 {% block meta_description %}{{ projects_index.description }}{% endblock %}
 
 {% block content %}
-    <section class="section hero">
-        <div class="container hero__inner">
+    <section class="section hero hero--split hero--projects">
+        <div class="container hero__inner hero__inner--split">
             <div class="hero__content">
                 <p class="eyebrow">{{ projects_index.eyebrow }}</p>
                 <h1>{{ projects_index.title }}</h1>
                 <p class="lead">{{ projects_index.description }}</p>
+                <ul class="hero__proof-list" aria-label="Project evidence highlights">
+                    <li>Context-rich case studies</li>
+                    <li>Repository, live, or documentation links</li>
+                    <li>Screenshots where available</li>
+                </ul>
             </div>
+
+            <aside class="hero__panel" aria-labelledby="projects-hero-panel-title">
+                <p class="card__label">Portfolio evidence</p>
+                <h2 id="projects-hero-panel-title">Technical work shown with proof, not just claims.</h2>
+                <p>
+                    Each project entry is structured to show the problem, role,
+                    implementation approach, current status, and supporting evidence.
+                </p>
+            </aside>
         </div>
     </section>
 
