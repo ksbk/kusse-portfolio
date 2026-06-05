@@ -5,8 +5,8 @@
 {% block meta_description %}{{ project.summary }}{% endblock %}
 
 {% block content %}
-    <section class="section hero">
-        <div class="container hero__inner">
+    <section class="section hero hero--split hero--project-detail">
+        <div class="container hero__inner hero__inner--split">
             <div class="hero__content">
                 <p class="eyebrow">{{ project.get_category_display }} · {{ project.get_status_display }}</p>
                 <h1>{{ project.title }}</h1>
@@ -26,6 +26,21 @@
                     </ul>
                 {% endif %}
             </div>
+
+            {% if project.image %}
+                <figure class="hero__visual project-visual project-visual--hero">
+                    <img src="{{ project.image.url }}" alt="{{ project.image_alt }}" loading="lazy">
+                </figure>
+            {% else %}
+                <aside class="hero__panel" aria-labelledby="project-hero-panel-title">
+                    <p class="card__label">Project evidence</p>
+                    <h2 id="project-hero-panel-title">Structured for technical review.</h2>
+                    <p>
+                        This entry separates the project role, technology choices,
+                        supporting links, problem context, and implementation approach.
+                    </p>
+                </aside>
+            {% endif %}
         </div>
     </section>
 

@@ -122,6 +122,15 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, "Professional portfolio website project.")
         self.assertContains(response, "View project details")
 
+    def test_projects_index_renders_evidence_led_hero_panel(self) -> None:
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Portfolio evidence")
+        self.assertContains(response, "Technical work shown with proof, not just claims.")
+        self.assertContains(response, "Context-rich case studies")
+        self.assertContains(response, "Screenshots where available")
+
     def test_projects_index_renders_available_links(self) -> None:
         Project.objects.create(
             title="Public Project",
@@ -168,6 +177,43 @@ class ProjectIndexViewTests(TestCase):
         self.assertContains(response, reverse("projects:detail", args=[project.slug]))
         self.assertContains(response, 'aria-label="View details for Linked Project"')
 
+    def test_projects_index_renders_visual_evidence_when_image_exists(self) -> None:
+        Project.objects.create(
+            title="Visual Project",
+            slug="visual-project",
+            summary="Project with visual evidence.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+            image="projects/visual-evidence/visual-project.png",
+            image_alt_text="Screenshot of the visual project homepage.",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'class="project-visual project-visual--card"')
+        self.assertContains(response, 'src="/media/projects/visual-evidence/visual-project.png"')
+        self.assertContains(response, 'alt="Screenshot of the visual project homepage."')
+        self.assertContains(response, 'loading="lazy"')
+
+    def test_projects_index_omits_visual_evidence_when_image_is_missing(self) -> None:
+        Project.objects.create(
+            title="Text Only Project",
+            slug="text-only-project",
+            summary="Project without visual evidence.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+        )
+
+        response = self.client.get(reverse("projects:index"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, "project-visual--card")
+
 
 class ProjectDetailViewTests(TestCase):
     def test_project_detail_renders_project_record(self) -> None:
@@ -197,6 +243,7 @@ class ProjectDetailViewTests(TestCase):
         self.assertContains(response, "Repository")
         self.assertContains(response, 'aria-label="Evidence links for Portfolio Platform"')
         self.assertContains(response, 'aria-label="Repository for Portfolio Platform"')
+        self.assertContains(response, "Structured for technical review.")
         self.assertNotContains(response, '<p class="eyebrow">Project details</p>')
 
     def test_project_detail_returns_404_for_missing_slug(self) -> None:
@@ -219,6 +266,45 @@ class ProjectDetailViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, reverse("projects:detail", args=[project.slug]))
+
+    def test_project_detail_renders_hero_visual_evidence_when_image_exists(self) -> None:
+        project = Project.objects.create(
+            title="Visual Detail Project",
+            slug="visual-detail-project",
+            summary="Project detail with visual evidence.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+            image="projects/visual-evidence/detail-project.png",
+            image_alt_text="Screenshot showing the project detail interface.",
+        )
+
+        response = self.client.get(reverse("projects:detail", args=[project.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'class="hero__visual project-visual project-visual--hero"')
+        self.assertContains(response, 'src="/media/projects/visual-evidence/detail-project.png"')
+        self.assertContains(response, 'alt="Screenshot showing the project detail interface."')
+        self.assertContains(response, 'loading="lazy"')
+
+    def test_project_detail_renders_review_panel_when_image_is_missing(self) -> None:
+        project = Project.objects.create(
+            title="Text Detail Project",
+            slug="text-detail-project",
+            summary="Project detail without visual evidence.",
+            category=ProjectCategory.WEB,
+            status=ProjectStatus.COMPLETED,
+            role="Developer",
+            tech_stack="Python, Django",
+        )
+
+        response = self.client.get(reverse("projects:detail", args=[project.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, 'class="hero__visual project-visual project-visual--hero"')
+        self.assertContains(response, "Project evidence")
+        self.assertContains(response, "Structured for technical review.")
 
 
 class SeedProjectsCommandTests(TestCase):

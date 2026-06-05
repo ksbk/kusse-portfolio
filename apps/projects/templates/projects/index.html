@@ -5,13 +5,27 @@
 {% block meta_description %}{{ projects_index.description }}{% endblock %}
 
 {% block content %}
-    <section class="section hero">
-        <div class="container hero__inner">
+    <section class="section hero hero--split hero--projects">
+        <div class="container hero__inner hero__inner--split">
             <div class="hero__content">
                 <p class="eyebrow">{{ projects_index.eyebrow }}</p>
                 <h1>{{ projects_index.title }}</h1>
                 <p class="lead">{{ projects_index.description }}</p>
+                <ul class="hero__proof-list" aria-label="Project evidence highlights">
+                    <li>Context-rich case studies</li>
+                    <li>Repository, live, or documentation links</li>
+                    <li>Screenshots where available</li>
+                </ul>
             </div>
+
+            <aside class="hero__panel" aria-labelledby="projects-hero-panel-title">
+                <p class="card__label">Portfolio evidence</p>
+                <h2 id="projects-hero-panel-title">Technical work shown with proof, not just claims.</h2>
+                <p>
+                    Each project entry is structured to show the problem, role,
+                    implementation approach, current status, and supporting evidence.
+                </p>
+            </aside>
         </div>
     </section>
 
@@ -22,14 +36,20 @@
                 <h2>Selected technical work</h2>
                 <p>
                     Projects are presented with their context, technical approach,
-                    current status, and supporting links where available.
+                    current status, visual evidence, and supporting links where available.
                 </p>
             </div>
 
             {% if projects %}
                 <div class="card-grid">
                     {% for project in projects %}
-                        <article class="card">
+                        <article class="card project-card">
+                            {% if project.image %}
+                                <figure class="project-visual project-visual--card">
+                                    <img src="{{ project.image.url }}" alt="{{ project.image_alt }}" loading="lazy">
+                                </figure>
+                            {% endif %}
+
                             <p class="card__label">{{ project.get_category_display }} · {{ project.get_status_display }}</p>
                             <h3>
                                 <a href="{% url 'projects:detail' slug=project.slug %}">
