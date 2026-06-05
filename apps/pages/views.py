@@ -102,9 +102,8 @@ class HomeView(TemplateView):
                     "I build clear, maintainable software shaped by research discipline."
                 ),
                 "description": _(
-                    "I work across Django, Python, data workflows, and technical writing, "
-                    "with an emphasis on practical systems, careful documentation, and "
-                    "evidence-aware delivery."
+                    "I build Django and Python systems with clear documentation, "
+                    "practical delivery, and evidence-aware decision-making."
                 ),
                 "primary_action": hero_primary_action,
                 "secondary_action": hero_secondary_action,
