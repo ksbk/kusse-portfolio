@@ -45,5 +45,10 @@ dist/
 # ==========================================
 # IDE & Editor Configurations
 # ==========================================
-.vscode/
+# VS Code: ignore by default, allow shared project config
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .trunk/
