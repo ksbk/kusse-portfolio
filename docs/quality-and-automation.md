@@ -64,6 +64,9 @@ make quality
 
 A change should not be committed if any of these checks fail.
 
+For manual accessibility and semantic review, use the fast checklist in
+`docs/dev-tools/audits/accessibility-checklist.md`.
+
 ## Quality Tools
 
 The following tools are active. Future automation remains deferred until it reduces real project risk.
