@@ -29,4 +29,6 @@ install-hooks:
 clean:
 	find . -type d -name __pycache__ -exec rm -rf {} +
 	find . -type f -name '*.pyc' -delete
-	rm -rf .mypy_cache .ruff_cache
+	find . -type f -name '*.pyo' -delete
+	rm -rf .mypy_cache .ruff_cache .pytest_cache htmlcov
+	rm -f .coverage .coverage.* .dmypy.json
