@@ -145,8 +145,8 @@ class HomeView(TemplateView):
                 {
                     "template": "sections/card_grid.html",
                     "surface": True,
-                    "eyebrow": _("Ways to engage"),
-                    "title": _("Clear paths for reviewing my work and starting a conversation."),
+                    "eyebrow": _("Explore the portfolio"),
+                    "title": _("A concise guide to selected work, background, and contact information."),
                     "items": engagement_options,
                 },
             ],
@@ -154,10 +154,10 @@ class HomeView(TemplateView):
                 "template": "sections/contact_cta.html",
                 "id": "contact",
                 "eyebrow": _("Contact"),
-                "title": _("Interested in working together?"),
+                "title": _("Contact"),
                 "description": _(
-                    "I am open to conversations around research software, Django development, "
-                    "technical documentation, and practical software projects."
+                    "Open to thoughtful conversations about software, research, "
+                    "and technical projects."
                 ),
                 "action_label": _("Contact me"),
                 "action_url": contact_url,
