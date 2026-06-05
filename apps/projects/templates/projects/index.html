@@ -22,14 +22,20 @@
                 <h2>Selected technical work</h2>
                 <p>
                     Projects are presented with their context, technical approach,
-                    current status, and supporting links where available.
+                    current status, visual evidence, and supporting links where available.
                 </p>
             </div>
 
             {% if projects %}
                 <div class="card-grid">
                     {% for project in projects %}
-                        <article class="card">
+                        <article class="card project-card">
+                            {% if project.image %}
+                                <figure class="project-visual project-visual--card">
+                                    <img src="{{ project.image.url }}" alt="{{ project.image_alt }}" loading="lazy">
+                                </figure>
+                            {% endif %}
+
                             <p class="card__label">{{ project.get_category_display }} · {{ project.get_status_display }}</p>
                             <h3>
                                 <a href="{% url 'projects:detail' slug=project.slug %}">
