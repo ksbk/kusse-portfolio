@@ -1,7 +1,8 @@
 .hero {
     border-bottom: 1px solid var(--color-border);
     background:
-        linear-gradient(135deg, rgb(219 238 230 / 82%), rgb(253 251 246 / 0%) 36rem),
+        radial-gradient(circle at top right, rgb(184 103 44 / 16%), transparent 22rem),
+        linear-gradient(135deg, rgb(219 238 230 / 86%), rgb(253 251 246 / 0%) 38rem),
         var(--color-surface-muted);
 }
 
@@ -11,6 +12,15 @@
 
 .hero__content {
     max-width: 52rem;
+}
+
+.hero__content h1 {
+    max-width: 13ch;
+    margin-bottom: var(--space-4);
+}
+
+.hero__content .lead {
+    max-width: 44rem;
 }
 
 .hero__proof-list {
@@ -29,12 +39,49 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     padding: var(--space-2) var(--space-3);
-    background: rgb(255 255 255 / 54%);
+    background: rgb(255 255 255 / 64%);
     overflow-wrap: anywhere;
+}
+
+.hero__panel,
+.hero__visual {
+    margin-top: var(--space-8);
+}
+
+.hero__panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    background: rgb(255 255 255 / 74%);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero__panel h2 {
+    max-width: 18ch;
+    margin-bottom: var(--space-3);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.hero__visual {
+    box-shadow: var(--shadow-soft);
 }
 
 @media (min-width: 48rem) {
     .hero__inner {
         padding-block: var(--space-16);
+    }
+}
+
+@media (min-width: 56rem) {
+    .hero__inner--split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+        align-items: center;
+        gap: var(--space-12);
+    }
+
+    .hero__panel,
+    .hero__visual {
+        margin-top: 0;
     }
 }
