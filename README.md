@@ -20,9 +20,9 @@ The project presents selected work across research, software development, AI, da
 
 Active development.
 
-Current milestone: Sprint 6 public portfolio content and presentation.
+Current focus: Sprint 9 project visual evidence and portfolio credibility.
 
-Sprint 5 quality automation is active.
+Completed recent milestones include quality automation, responsive refinement, navigation states, and accessibility/semantic hardening.
 
 See:
 
