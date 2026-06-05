@@ -29,6 +29,25 @@
         </div>
     </section>
 
+    {% if project.image %}
+        <section class="section project-visual-section" aria-labelledby="project-visual-heading">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Visual evidence</p>
+                    <h2 id="project-visual-heading">Project screenshot or representative image</h2>
+                    <p>
+                        Visual evidence helps reviewers connect the project description to
+                        a concrete interface, result, artifact, or implementation context.
+                    </p>
+                </div>
+
+                <figure class="project-visual project-visual--detail">
+                    <img src="{{ project.image.url }}" alt="{{ project.image_alt }}" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    {% endif %}
+
     <section class="section section--surface">
         <div class="container">
             <div class="section-heading">
